@@ -1,0 +1,40 @@
+{{ partial "head.html" . }}
+<body class="{{ .Site.Params.themeColor }}">
+	{{ partial "sidebar.html" . }}
+
+	<div class="content container">
+		<p id="index-blurb">
+			<img src="/images/logo150.png" alt="SnabbWall logo">
+			<span class="appname">SnabbWall</span> is a layer-7 network flow
+			detector and firewall application built on
+			<a href="http://snabb.co">Snabb</a>.
+		</p>
+
+		{{ if .Site.Sections.news.Pages }}
+		<h2>Latest Updates</h2>
+		<ul class="news-list">
+		{{ range first 3 .Site.Sections.news.Pages }}
+			<li>
+				<span class="date">{{ .Date.Format "Jun 2, 2006" }}</span>
+				<a href="{{ .Permalink }}">{{ .Title }}</a>
+			</li>
+		{{ end }}
+		</ul>
+		<p style="font-size: 90%"><a href="/news/"><em>More updates…</em></a></p>
+		{{ end }}
+
+		<h2>Development</h2>
+		<p>
+			SnabbWall is currently under <a href="/development">development</a>,
+			carried on by <a href="http://www.igalia.com">Igalia</a>, with funding
+			from the <a href="https://nlnet.nl">NLnet Foundation</a>.
+		</p>
+
+		<div id="frontpage-logos">
+			<a href="http://www.igalia.com"><img src="/images/igalia-logo.png"
+				alt="Igalia"></a><a href="http://nlnet.nl"><img src="/images/nlnet-logo.gif"
+				alt="NLnet"></a>
+		</div>
+	</div>
+</body>
+</html>

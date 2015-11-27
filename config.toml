@@ -1,0 +1,11 @@
+baseurl = "http://snabbwall.org/"
+languageCode = "en-us"
+title = "Snabb Wall"
+theme = "snabbwall"
+
+[params]
+	themeColor = "theme-base-08"
+	description = "L7 flow filtering"
+
+[permalinks]
+	news = "/news/:year/:month/:day/:slug"
