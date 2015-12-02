@@ -323,3 +323,6 @@ p#index-blurb img {
 span.appname {
 	font-family: "Abril Fatface", serif;
 }
+h1, span.post-date {
+  font-family: "Abril Fatface", serif;
+}
