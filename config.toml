@@ -1,6 +1,6 @@
 baseurl = "http://snabbwall.org/"
 languageCode = "en-us"
-title = "Snabb Wall"
+title = "SnabbWall"
 theme = "snabbwall"
 
 [params]
