@@ -283,24 +283,43 @@ div#frontpage-logos a {
 }
 
 p#index-blurb {
-	margin: 50px 0;
-	min-height: 170px;
+	margin: -110px 0 25px 0;
 	padding: 20px 20px 20px 40px;
-	background-color: #FAEEEE;
-	border-radius: 1em;
 	font-size: 150%;
 	color: #511;
-	border: 8px solid #1A1A1A;
 	box-shadow: 0 5px 10px #AAA;
+	border-radius: 0.5rem;
+	background-color: #fff;
 }
 p#index-blurb img {
-	display: block;
+	display: none;
 	position: relative;
 	float: right;
-	top: -110px;
+	top: -105px;
 	left: -10px;
 	margin: 10px;
 }
+@media (min-width: 38em) {
+	p#index-blurb {
+		margin-top: -7rem;
+	}
+}
+@media (min-width: 48em) {
+	p#index-blurb {
+		margin-top: 3rem;
+	}
+}
+@media (min-width: 64em) {
+	p#index-blurb {
+		min-height: 170px;
+		margin: 50px 0;
+		border-radius: 0.5rem;
+	}
+	p#index-blurb img {
+		display: block;
+	}
+}
+
 span.appname {
 	font-family: "Abril Fatface", serif;
 }
