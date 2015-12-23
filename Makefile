@@ -5,3 +5,4 @@ all: $(PNG_OBJS)
 
 static/images/%.png: %.dit
 	ditaa -E -o $< $@
+	pngout -y $@
