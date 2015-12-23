@@ -401,3 +401,29 @@ a.pagination-item:hover {
     border-bottom-right-radius: 4px;
   }
 }
+
+figure {
+	text-align: center;
+	border: 1px solid #a88;
+	border-radius: 5px 5px 0 0;
+	box-shadow: 0 3px 7px #888;
+	padding: 0;
+}
+figure figcaption {
+	background-color: #a88;
+	color: #fff;
+	display: block;
+	font-size: 85%;
+	font-style: italic;
+	padding: 0.25em 1em;
+	margin: 0;
+}
+figure figcaption p {
+	margin: 0;
+	padding: 0;
+}
+figure img {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
