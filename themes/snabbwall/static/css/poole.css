@@ -404,13 +404,13 @@ a.pagination-item:hover {
 
 figure {
 	text-align: center;
-	border: 1px solid #a88;
+	border: 1px solid #ac4142;
 	border-radius: 5px 5px 0 0;
 	box-shadow: 0 3px 7px #888;
 	padding: 0;
 }
 figure figcaption {
-	background-color: #a88;
+	background-color: #ac4142;
 	color: #fff;
 	display: block;
 	font-size: 85%;
