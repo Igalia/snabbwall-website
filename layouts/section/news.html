@@ -1,0 +1,22 @@
+{{ partial "head.html" . }}
+<body class="{{ .Site.Params.themeColor }}">
+	{{ partial "sidebar.html" . }}
+
+	<div class="content container">
+		<h1>News</h1>
+		<ul class="news-list">
+		{{ $paginator := .Paginate (where .Data.Pages "Type" "news") }}
+		{{ template "_internal/pagination.html" . }}
+		{{ range $paginator.Pages }}
+			<li>
+				<span class="date">{{ .Date.Format "Jan 2, 2006" }}</span>
+				<a href="{{ .Permalink }}">{{ .Title }}</a>
+				<div class="summary">
+					{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}
+				</div>
+			</li>
+		{{ end }}
+		</ul>
+	</div>
+</body>
+</html>

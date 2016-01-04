@@ -1,7 +1,6 @@
 baseurl = "http://snabbwall.org/"
 languageCode = "en-us"
 title = "SnabbWall"
-theme = "snabbwall"
 
 [params]
 	themeColor = "theme-base-08"
@@ -9,3 +8,9 @@ theme = "snabbwall"
 
 [permalinks]
 	news = "/news/:year/:month/:day/:slug"
+
+[[menu.main]]
+	identifier = "news"
+	name = "News"
+	weight = -10
+	url = "/news/"

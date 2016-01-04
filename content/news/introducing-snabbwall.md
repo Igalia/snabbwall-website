@@ -1,9 +1,6 @@
 +++
-Description = ""
-Tags = []
-date = "2015-11-29T01:39:13+02:00"
 title = "Introducing SnabbWall"
-draft = true
+date = "2015-12-31T12:39:13+02:00"
 +++
 
-This is a first post
+The project is officially started! <!--more--> [Adrián Pérez](http://perezdecastro.org) has [posted a writeup](http://perezdecastro.org/2015/introducing-snabbwall.html) introducing the project and commenting on some of aspects of the [design]({{< ref "design.md" >}}) of <span class="appname">SnabbWall</span>.
