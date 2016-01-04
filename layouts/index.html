@@ -15,7 +15,7 @@
 		<ul class="news-list">
 		{{ range first 3 .Site.Sections.news.Pages }}
 			<li>
-				<span class="date">{{ .Date.Format "Jun 2, 2006" }}</span>
+				<span class="date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
 				<a href="{{ .Permalink }}">{{ .Title }}</a>
 			</li>
 		{{ end }}
