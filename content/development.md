@@ -6,7 +6,7 @@ title = "Development"
 menu = "main"
 +++
 
-Development of <span class="appname">SnabbWall</span> takes place in the [author's development branch](https://github.com/aperezdc/snabbswitch) of Snabb Switch, using branches with the `swall-` prefix: `swall-quince` is the main development branch, based on the [Snabb Switch 2015.12 "Quince"](https://github.com/SnabbCo/snabbswitch/releases/tag/v2015.12) stable release.
+Development of <span class="appname">SnabbWall</span> takes place in the [author's development branch](https://github.com/aperezdc/snabbswitch) of Snabb Switch, using branches with the `swall-` prefix: `swall-starfruit` is the main development branch, based on the [Snabb Switch 2015.02 "Starfruit"](https://github.com/SnabbCo/snabbswitch/releases/tag/v2016.02) stable release.
 
 The [project roadmap]({{< ref "roadmap.md" >}}) provides a good overview of the current development status.
 
