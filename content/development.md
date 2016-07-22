@@ -6,7 +6,7 @@ title = "Development"
 menu = "main"
 +++
 
-Development of <span class="appname">SnabbWall</span> takes place in the [author's development branch](https://github.com/aperezdc/snabb) of Snabb, using branches with the `swall-` prefix: `swall-starfruit` is the main development branch, based on the [Snabb 2016.02 "Starfruit"](https://github.com/SnabbCo/snabb/releases/tag/v2016.02) stable release.
+Development of <span class="appname">SnabbWall</span> takes place in the [author's development branch](https://github.com/aperezdc/snabb) of Snabb, using branches with the `swall-` prefix, and `snabbwall` being the main development branch. Currently SnabbWall is based on the [Snabb 2016.07 "Xiguea"](https://github.com/SnabbCo/snabb/releases/tag/v2016.02) stable release.
 
 The [project roadmap]({{< ref "roadmap.md" >}}) provides a good overview of the current development status.
 
