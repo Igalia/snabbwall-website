@@ -1,7 +1,7 @@
 +++
 date = "2016-08-18T12:14:20+03:00"
 title = "Third milestone: SnabbWall can now analyze traffic"
-description = ""
+description = "Traffic analysis and L7 flow identification is now functional"
 tags = []
 +++
 
