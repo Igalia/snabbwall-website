@@ -1,6 +1,8 @@
 baseurl = "http://snabbwall.org/"
 languageCode = "en-us"
 title = "SnabbWall"
+PygmentsCodeFences = true
+pygmentsstyle = "tango"
 
 [params]
 	themeColor = "theme-base-08"
