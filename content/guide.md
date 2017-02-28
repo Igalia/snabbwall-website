@@ -40,6 +40,23 @@ The firewall app drops packets as necessary according to the firewall rules and
 forwards the rest to the next app. For example, in the diagram above the firewall sends packets
 out to another NIC.
 
+## Installation
+
+Before getting into the configuration details, let's quickly go over how to obtain a copy of
+Snabbwall. (Feel free to move on to the next section if you've already installed it)
+
+For this guide, you will want to obtain a source code distribution from the
+Github [releases](https://github.com/aperezdc/snabb/releases) page. To build Snabbwall, just
+unpack the source code archive and run `make` in the unpacked directory.
+
+You will also need to obtain and build a copy of the [nDPI](https://github.com/ntop/nDPI)
+library. Snabbwall will work with nDPI [v1.8](https://github.com/ntop/nDPI/releases/tag/1.8)
+(the newest version as of Feb. 2017). The instructions for building nDPI are in the linked
+Github README.
+
+Note: depending on where you install nDPI, you may need to set `LD_LIBRARY_PATH` when running
+a Snabbwall program to ensure that it can load `libndpi.so` via the LuaJIT FFI.
+
 ## First steps
 
 To create a runnable firewall, we need to make a Snabb program (a program is a set of Snabb apps that
@@ -341,3 +358,8 @@ to remove the `duration` argument so that the firewall runs indefinitely.
 To aid in debugging, it may be desirable to log actions to the system
 log. To enable logging for the `L7Fw` app set the `logging` key in
 `fw_config` to `"on"`. This will log dropped packets to the system log.
+
+In case you want to hack on the Snabbwall apps themselves, the source code is
+contained in the [src/apps/wall](https://github.com/aperezdc/snabb/tree/snabbwall/src/apps/wall)
+directory. Please feel free to file any bug reports or pull requests via
+the [Github page](https://github.com/aperezdc/snabb).
