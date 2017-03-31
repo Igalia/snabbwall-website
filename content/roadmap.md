@@ -16,6 +16,6 @@ Milestone | Status | Description
 **L7 Firewall Application** | [completed](https://www.asumu.xyz/blog/2017/01/27/snabbwall-s-firewall-app-l7fw/) | Implement a Snabb Switch application/program which can accept, drop or reject traffic based on the application-level data flows, using the component developed in the previous phase.
 **Documentation** | [completed](https://www.asumu.xyz/blog/2017/02/21/optimizing-snabbwall/) | Complete the documentation to cover the public API of the flow detector component, a guide for Snabb developers, and an user-oriented manual for the firewall application.
 **Testing and Benchmarking** | [completed](https://www.asumu.xyz/blog/2017/02/21/optimizing-snabbwall/) | Provide a benchmark and test suite, plus performance reports.
-**Upstreaming** | *in&nbsp;progress* | The final goal is to have SnabbWall in good shape to make it available in the upstream Snabb Switch repository.
+**Upstreaming** | [completed](https://www.asumu.xyz/blog/2017/04/20/upstreaming-snabbwall/) | The final goal is to have SnabbWall in good shape to make it available in the upstream Snabb Switch repository.
 
 Note that, while the milestones above are detailed in a linear way, some tasks from different phases can —an may— be carried in parallel. For example, the documentation and upstreaming efforts are very likely to be done in parallel with the development.
