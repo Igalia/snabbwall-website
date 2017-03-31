@@ -50,8 +50,9 @@ Github [releases](https://github.com/aperezdc/snabb/releases) page. To build Sna
 unpack the source code archive and run `make` in the unpacked directory.
 
 You will also need to obtain and build a copy of the [nDPI](https://github.com/ntop/nDPI)
-library. Snabbwall will work with nDPI [v1.8](https://github.com/ntop/nDPI/releases/tag/1.8)
-(the newest version as of Feb. 2017). The instructions for building nDPI are in the linked
+library either through your operating system's package manager or via Github.
+Snabbwall will work with nDPI [v1.8](https://github.com/ntop/nDPI/releases/tag/1.8)
+(the newest version as of March 2017). The instructions for building nDPI are in the linked
 Github README.
 
 Note: depending on where you install nDPI, you may need to set `LD_LIBRARY_PATH` when running
@@ -169,15 +170,13 @@ sudo ./snabb example_firewall <input_file>.pcap <output_file>.pcap
 supplying appropriate pcap file paths. There are many test pcap files available
 in `src/program/wall/tests/data`.
 
-Note: you need to have `libndpi` installed to use the packet scanner. Without it,
+Note: you need to have `libndpi` installed to use the packet scanner.
+See the installation instructions from earlier for obtaining nDPI. Without it,
 you may see an error like the following:
 
 ```
 ndpi/c.lua:73: libndpi.so: cannot open shared object file: No such file or directory
 ```
-
-If `libndpi` is not available from your Linux distro, you can obtain a copy to build
-from [https://github.com/ntop/nDPI/releases](https://github.com/ntop/nDPI/releases).
 
 After running the example program, you should see a report that looks similar to this:
 
@@ -359,7 +358,7 @@ To aid in debugging, it may be desirable to log actions to the system
 log. To enable logging for the `L7Fw` app set the `logging` key in
 `fw_config` to `"on"`. This will log dropped packets to the system log.
 
-In case you want to hack on the Snabbwall apps themselves, the source code is
-contained in the [src/apps/wall](https://github.com/aperezdc/snabb/tree/snabbwall/src/apps/wall)
+If you would like to hack on the Snabbwall apps themselves, the source code is
+available in the [src/apps/wall](https://github.com/Igalia/snabb/tree/snabbwall/src/apps/wall)
 directory. Please feel free to file any bug reports or pull requests via
-the [Github page](https://github.com/aperezdc/snabb).
+the [Github page](https://github.com/Igalia/snabb/tree/snabbwall).
