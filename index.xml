@@ -1,0 +1,724 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SnabbWall</title>
+    <link>http://snabbwall.org/</link>
+    <description>Recent content on SnabbWall</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 Apr 2017 16:00:00 -0800</lastBuildDate>
+    <atom:link href="http://snabbwall.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Sixth milestone: upstreaming</title>
+      <link>http://snabbwall.org/news/2017/04/20/sixth-milestone-upstreaming</link>
+      <pubDate>Thu, 20 Apr 2017 16:00:00 -0800</pubDate>
+      
+      <guid>http://snabbwall.org/news/2017/04/20/sixth-milestone-upstreaming</guid>
+      <description>&lt;p&gt;We have completed the sixth and final development milestone of
+&lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt;, which is to upstream the
+app to the main Snabb repository.&lt;/p&gt;
+
+&lt;p&gt;With this update, we have moved the official Snabbwall branch to
+&lt;a href=&#34;https://github.com/Igalia/snabb/tree/snabbwall&#34;&gt;&lt;code&gt;Igalia/snabb&lt;/code&gt;&lt;/a&gt; on Github in the &lt;code&gt;snabbwall&lt;/code&gt; branch.
+Any further updates will be made to this branch and will be periodically
+upstreamed to the &lt;a href=&#34;https://github.com/snabbco/snabb&#34;&gt;&lt;code&gt;snabbco/snabb&lt;/code&gt;&lt;/a&gt; repository.&lt;/p&gt;
+
+&lt;p&gt;There is a blog post with a few more details &lt;a href=&#34;https://www.asumu.xyz/blog/2017/04/20/upstreaming-snabbwall/&#34;&gt;here&lt;/a&gt;. Thanks
+to the NLNet Foundation for sponsoring this project!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fifth milestone: documentation and benchmarking</title>
+      <link>http://snabbwall.org/news/2017/02/23/fifth-milestone-documentation-and-benchmarking</link>
+      <pubDate>Thu, 23 Feb 2017 14:00:00 -0800</pubDate>
+      
+      <guid>http://snabbwall.org/news/2017/02/23/fifth-milestone-documentation-and-benchmarking</guid>
+      <description>&lt;p&gt;We have completed the fifth and penultimate
+development milestone of &lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt;.
+This milestone consists of writing user documentation along with some
+testing and benchmarking.&lt;/p&gt;
+
+&lt;p&gt;On the documentation side, we now have a
+&lt;a href=&#34;http://snabbwall.org/guide/&#34;&gt;user guide&lt;/a&gt; document aimed at people who are
+familiar with Snabb and are interested in setting up a firewall with
+&lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt;. Please let us know if you have
+any feedback about the documentation.&lt;/p&gt;
+
+&lt;p&gt;For testing and benchmarking, you can check out the &lt;a href=&#34;https://github.com/aperezdc/snabb/tree/snabbwall/src/program/wall/tests&#34;&gt;tests directory&lt;/a&gt;
+in our Github repository. Based on the benchmarks, we have made several
+optimizations that should make &lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt;
+perform much better. For the full writeup on these optimizations,
+you can read the &lt;a href=&#34;https://www.asumu.xyz/blog/2017/02/21/optimizing-snabbwall/&#34;&gt;blog post&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The final remaining development milestone from our &lt;a href=&#34;http://snabbwall.org/roadmap/&#34;&gt;development
+roadmap&lt;/a&gt; is upstreaming.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Fourth milestone: We Have a Firewall!</title>
+      <link>http://snabbwall.org/news/2017/02/08/fourth-milestone-we-have-a-firewall</link>
+      <pubDate>Wed, 08 Feb 2017 16:52:43 +0200</pubDate>
+      
+      <guid>http://snabbwall.org/news/2017/02/08/fourth-milestone-we-have-a-firewall</guid>
+      <description>&lt;p&gt;Igalian &lt;a href=&#34;https://www.asumu.xyz/&#34;&gt;Asumu Takikawa&lt;/a&gt; has completed the next
+development milestone of &lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt;. This means
+that the &lt;code&gt;L7fw&lt;/code&gt; application is now
+&lt;a href=&#34;https://github.com/aperezdc/snabb/blob/snabbwall/src/apps/wall/l7fw.lua#L38&#34;&gt;available&lt;/a&gt;,
+as well as a &lt;code&gt;snabb wall filter&lt;/code&gt; command, which can be readily used. With
+these additions, the fourth development milestone of our &lt;a href=&#34;http://snabbwall.org/roadmap/&#34;&gt;development
+roadmap&lt;/a&gt; is now completed. Make sure to check out
+Asumu&amp;rsquo;s complete &lt;a href=&#34;https://www.asumu.xyz/blog/2017/01/27/snabbwall-s-firewall-app-l7fw/&#34;&gt;writeup about the new features&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We have also started using the &lt;a href=&#34;https://github.com/aperezdc/snabb/wiki&#34;&gt;project
+wiki&lt;/a&gt; to write down some technical
+information for developers wanting to use the
+&lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt; components in their Snabb applications,
+or looking into contributing to the project.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Guide</title>
+      <link>http://snabbwall.org/guide/</link>
+      <pubDate>Fri, 03 Feb 2017 19:40:00 -0800</pubDate>
+      
+      <guid>http://snabbwall.org/guide/</guid>
+      <description>
+
+&lt;p&gt;This document is a high-level guide that describes how to use &lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt;
+to set up a basic firewall. See the &lt;a href=&#34;http://snabbwall.org/design/&#34;&gt;design&lt;/a&gt; page for background on the basic
+philosophy and design of &lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/Span&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;use-case:8c27d0d0b409c1de1867fdc9a128c72c&#34;&gt;Use-case&lt;/h2&gt;
+
+&lt;p&gt;This guide will use a concrete use-case to illustrate how one might set up a
+&lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/Span&gt; deployment.
+Imagine that you are running a public network, maybe a cafe hotspot or a corporate guest network,
+and wish to block Bittorrent traffic to save on bandwidth.&lt;/p&gt;
+
+&lt;p&gt;To simplify the setup, we will start with a program that simulates this network activity
+by reading and writing packet capture files (in pcap format). Near the end, the
+document explains what aspects need to change in order to run the firewall with real
+network interfaces.&lt;/p&gt;
+
+&lt;p&gt;The diagram below from the design page shows a typical &lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/Span&gt;
+configuration.&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://snabbwall.org/images/diagrams/arch-blocks.png&#34; alt=&#34;Building blocks&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Building blocks
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;The &lt;span class=&#34;appname&#34;&gt;Snabbwall&lt;/span&gt; suite comes with two main apps:
+&lt;a href=&#34;http://snabbwall.org/design/#l7-spy:83772ba7ad0304b1562d08f190539946&#34;&gt;&lt;code&gt;L7Spy&lt;/code&gt;&lt;/a&gt; (a packet scanner)
+and &lt;a href=&#34;http://snabbwall.org/design/#l7-firewall:83772ba7ad0304b1562d08f190539946&#34;&gt;&lt;code&gt;L7Fw&lt;/code&gt;&lt;/a&gt; (a firewall). As you can
+see above, the scanner app consumes and scans packets coming into the program
+(e.g., from a NIC, a pcap reader, or any other app).&lt;/p&gt;
+
+&lt;p&gt;In a simple setup, the scanner forwards packets to the firewall app. The firewall consults the
+data from the scanner and can make forwarding decisions, based on a set of firewall rules.&lt;/p&gt;
+
+&lt;p&gt;The firewall app drops packets as necessary according to the firewall rules and
+forwards the rest to the next app. For example, in the diagram above the firewall sends packets
+out to another NIC.&lt;/p&gt;
+
+&lt;h2 id=&#34;installation:8c27d0d0b409c1de1867fdc9a128c72c&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;Before getting into the configuration details, let&amp;rsquo;s quickly go over how to obtain a copy of
+Snabbwall. (Feel free to move on to the next section if you&amp;rsquo;ve already installed it)&lt;/p&gt;
+
+&lt;p&gt;For this guide, you will want to obtain a source code distribution from the
+Github &lt;a href=&#34;https://github.com/aperezdc/snabb/releases&#34;&gt;releases&lt;/a&gt; page. To build Snabbwall, just
+unpack the source code archive and run &lt;code&gt;make&lt;/code&gt; in the unpacked directory.&lt;/p&gt;
+
+&lt;p&gt;You will also need to obtain and build a copy of the &lt;a href=&#34;https://github.com/ntop/nDPI&#34;&gt;nDPI&lt;/a&gt;
+library either through your operating system&amp;rsquo;s package manager or via Github.
+Snabbwall will work with nDPI &lt;a href=&#34;https://github.com/ntop/nDPI/releases/tag/1.8&#34;&gt;v1.8&lt;/a&gt;
+(the newest version as of March 2017). The instructions for building nDPI are in the linked
+Github README.&lt;/p&gt;
+
+&lt;p&gt;Note: depending on where you install nDPI, you may need to set &lt;code&gt;LD_LIBRARY_PATH&lt;/code&gt; when running
+a Snabbwall program to ensure that it can load &lt;code&gt;libndpi.so&lt;/code&gt; via the LuaJIT FFI.&lt;/p&gt;
+
+&lt;h2 id=&#34;first-steps:8c27d0d0b409c1de1867fdc9a128c72c&#34;&gt;First steps&lt;/h2&gt;
+
+&lt;p&gt;To create a runnable firewall, we need to make a Snabb program (a program is a set of Snabb apps that
+are configured to solve a task). If you&amp;rsquo;re not familiar with Snabb programs, you may
+benefit from also reading Snabb&amp;rsquo;s &lt;a href=&#34;https://github.com/snabbco/snabb/blob/master/src/doc/getting-started.md&#34;&gt;Getting Started&lt;/a&gt;
+document.&lt;/p&gt;
+
+&lt;p&gt;Here is a barebones firewall program module. To make this runnable,
+name the file &lt;code&gt;example_firewall.lua&lt;/code&gt; and put it in the &lt;code&gt;src/program/example_firewall&lt;/code&gt;
+directory of your &lt;span class=&#34;appname&#34;&gt;Snabbwall&lt;/span&gt; distribution.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #8f5902; font-style: italic&#34;&gt;-- example_firewall.lua&lt;/span&gt;
+
+&lt;span style=&#34;color: #204a87&#34;&gt;module&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;...&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #204a87&#34;&gt;package.seeall&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color: #8f5902; font-style: italic&#34;&gt;-- basic module imports&lt;/span&gt;
+&lt;span style=&#34;color: #204a87; font-weight: bold&#34;&gt;local&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;raw&lt;/span&gt;  &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #204a87&#34;&gt;require&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;apps.socket.raw&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #204a87; font-weight: bold&#34;&gt;local&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;pcap&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #204a87&#34;&gt;require&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;apps.pcap.pcap&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #204a87; font-weight: bold&#34;&gt;local&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;spy&lt;/span&gt;  &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #204a87&#34;&gt;require&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;apps.wall.l7spy&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #204a87; font-weight: bold&#34;&gt;local&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;fw&lt;/span&gt;   &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #204a87&#34;&gt;require&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;apps.wall.l7fw&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #204a87; font-weight: bold&#34;&gt;local&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;ndpi&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #204a87&#34;&gt;require&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;apps.wall.scanner.ndpi&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color: #8f5902; font-style: italic&#34;&gt;-- configuration parameters for the l7fw&lt;/span&gt;
+&lt;span style=&#34;color: #8f5902; font-style: italic&#34;&gt;-- replace these with the appropriate values for your firewall host&lt;/span&gt;
+&lt;span style=&#34;color: #8f5902; font-style: italic&#34;&gt;-- for testing purposes, any values are ok&lt;/span&gt;
+&lt;span style=&#34;color: #204a87; font-weight: bold&#34;&gt;local&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;host_ip&lt;/span&gt;  &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;192.168.0.1&amp;quot;&lt;/span&gt;
+&lt;span style=&#34;color: #204a87; font-weight: bold&#34;&gt;local&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;host_mac&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;01:23:45:67:89:ab&amp;quot;&lt;/span&gt;
+
+&lt;span style=&#34;color: #204a87; font-weight: bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;run&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+   &lt;span style=&#34;color: #8f5902; font-style: italic&#34;&gt;-- an nDPI scanner instance for l7spy and l7fw&lt;/span&gt;
+   &lt;span style=&#34;color: #204a87; font-weight: bold&#34;&gt;local&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;ndpi&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;new&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;()&lt;/span&gt;
+
+   &lt;span style=&#34;color: #8f5902; font-style: italic&#34;&gt;-- configuration of the Snabb app network&lt;/span&gt;
+   &lt;span style=&#34;color: #204a87; font-weight: bold&#34;&gt;local&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;new&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;()&lt;/span&gt;
+
+   &lt;span style=&#34;color: #8f5902; font-style: italic&#34;&gt;-- a very basic rules table&lt;/span&gt;
+   &lt;span style=&#34;color: #204a87; font-weight: bold&#34;&gt;local&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;rules&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;accept&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;}&lt;/span&gt;
+
+   &lt;span style=&#34;color: #8f5902; font-style: italic&#34;&gt;-- configuration table for l7fw&lt;/span&gt;
+   &lt;span style=&#34;color: #204a87; font-weight: bold&#34;&gt;local&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;fw_config&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;scanner&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;s&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt;
+                       &lt;span style=&#34;color: #000000&#34;&gt;rules&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;rules&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt;
+                       &lt;span style=&#34;color: #000000&#34;&gt;local_ipv4&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;host_ip&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt;
+                       &lt;span style=&#34;color: #000000&#34;&gt;local_mac&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;host_mac&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;}&lt;/span&gt;
+
+   &lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;net1&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;pcap&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;PcapReader&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000cf; font-weight: bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;])&lt;/span&gt;
+   &lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;net2&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;pcap&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;PcapWriter&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;args&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color: #0000cf; font-weight: bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;])&lt;/span&gt;
+
+   &lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;scanner&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;spy&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;L7Spy&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;scanner&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;})&lt;/span&gt;
+   &lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;firewall&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;fw&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;L7Fw&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;fw_config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+
+   &lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;link&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;net1.output -&amp;gt; scanner.south&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+   &lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;link&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;scanner.north -&amp;gt; firewall.input&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+   &lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;link&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;firewall.output -&amp;gt; net2.input&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+   &lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;link&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;firewall.reject -&amp;gt; net2.input&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+
+   &lt;span style=&#34;color: #000000&#34;&gt;engine&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;configure&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+
+   &lt;span style=&#34;color: #8f5902; font-style: italic&#34;&gt;-- run for 5 seconds and show the app reports&lt;/span&gt;
+   &lt;span style=&#34;color: #000000&#34;&gt;engine&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;({&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;duration&lt;/span&gt;&lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #0000cf; font-weight: bold&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;report&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;showapps&lt;/span&gt;&lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #204a87; font-weight: bold&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;}})&lt;/span&gt;
+&lt;span style=&#34;color: #204a87; font-weight: bold&#34;&gt;end&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Let&amp;rsquo;s walk through this step-by-step. At the top, we have several module imports
+and some constant definitions like the IP of the router host called &lt;code&gt;host_ip&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The main part of the program is the &lt;code&gt;run&lt;/code&gt; function, which is called by the Snabb
+framework when the program is invoked.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;run&lt;/code&gt; function first sets up several definitions. The &lt;code&gt;s&lt;/code&gt; variable is the
+packet scanner that our instances of &lt;code&gt;L7Spy&lt;/code&gt; and &lt;code&gt;L7Fw&lt;/code&gt; will use. The &lt;code&gt;c&lt;/code&gt; variable
+is the configuration of the Snabb program.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;rules&lt;/code&gt; definition is the table of firewall rules. For now, it&amp;rsquo;s defined to
+accept all packets. We&amp;rsquo;ll update this later.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;fw_config&lt;/code&gt; table stores the configuration for the &lt;code&gt;L7Fw&lt;/code&gt; app, which takes
+several configuration arguments. It&amp;rsquo;s recommended to fill out the &lt;code&gt;local_ipv4&lt;/code&gt;
+(and/or &lt;code&gt;local_ipv6&lt;/code&gt;) and &lt;code&gt;local_mac&lt;/code&gt; fields, which are used to send out responses
+in case of a &lt;code&gt;reject&lt;/code&gt; policy.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;rules&lt;/code&gt; and &lt;code&gt;scanner&lt;/code&gt; keys are also mandatory.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;config.app&lt;/code&gt; and &lt;code&gt;config.link&lt;/code&gt; lines are setting up the app network for this
+Snabb program. This is also pretty straightforward. The first four lines instantiate
+the four apps in our app network with their configurations.&lt;/p&gt;
+
+&lt;p&gt;The six link lines set up the connections between the apps. The &lt;code&gt;net1&lt;/code&gt; app pulls
+in packets from the &amp;ldquo;network interface&amp;rdquo; (though it&amp;rsquo;s just a file for now), and
+pushes them into the &lt;code&gt;scanner&lt;/code&gt; app&amp;rsquo;s south end.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;scanner&lt;/code&gt; pushes packets from its south end to its north end and vice versa.
+The north end in this case is connected to the firewall, so packets get pushed to
+the firewall after exiting the scanner.&lt;/p&gt;
+
+&lt;p&gt;After going through the firewall, the packets are pushed to the &lt;code&gt;net2&lt;/code&gt; network
+interface. There are two output links for the firewall, in case you need to
+distinguish forwarded packets from the firewall (on &lt;code&gt;output&lt;/code&gt;)
+and error responses that are constructed by the firewall (on &lt;code&gt;reject&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h2 id=&#34;running-the-firewall:8c27d0d0b409c1de1867fdc9a128c72c&#34;&gt;Running the firewall&lt;/h2&gt;
+
+&lt;p&gt;To run the firewall, first recompile Snabb (&lt;code&gt;make&lt;/code&gt; in the top-level directory)
+and then invoke it as:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;sudo ./snabb example_firewall &amp;lt;input_file&amp;gt;.pcap &amp;lt;output_file&amp;gt;.pcap
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;supplying appropriate pcap file paths. There are many test pcap files available
+in &lt;code&gt;src/program/wall/tests/data&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Note: you need to have &lt;code&gt;libndpi&lt;/code&gt; installed to use the packet scanner.
+See the installation instructions from earlier for obtaining nDPI. Without it,
+you may see an error like the following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;ndpi/c.lua:73: libndpi.so: cannot open shared object file: No such file or directory
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;After running the example program, you should see a report that looks similar to this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;apps report:
+l7fw
+Accepted packets: 17 (100%)
+Rejected packets: 0 (0%)
+Dropped packets:  0 (0%)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The actual number of accepted packets will depend on the pcap file that you use.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-non-trivial-firewall-rules:8c27d0d0b409c1de1867fdc9a128c72c&#34;&gt;Using non-trivial firewall rules&lt;/h2&gt;
+
+&lt;p&gt;The firewall rules that we are using now are not very interesting. Let&amp;rsquo;s go back to
+our Bittorrent scenario and consider what is needed to support that.&lt;/p&gt;
+
+&lt;p&gt;The firewall rules are specified using a Lua table whose keys are protocol names
+(or &lt;code&gt;&amp;quot;default&amp;quot;&lt;/code&gt;) and whose values are strings which describe particular policies for
+that protocol.&lt;/p&gt;
+
+&lt;p&gt;For example, to specify that Bittorrent traffic should be blocked entirely, change
+the &lt;code&gt;local rules = ...&lt;/code&gt; line above to the following:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #204a87; font-weight: bold&#34;&gt;local&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;rules&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;BITTORRENT&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;drop&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt;
+                &lt;span style=&#34;color: #000000&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;accept&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we can run the example program on some example Bittorrent traffic to test
+the rules:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;sudo ./snabb example_firewall\
+  program/wall/tests/data/BITTORRENT.pcap output.pcap
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;You should see a report with the following numbers:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;apps report:
+l7fw
+Accepted packets: 0 (0%)
+Rejected packets: 0 (0%)
+Dropped packets:  53 (100%)
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The firewall rules can also be more sophisticated. The right-hand sides of the key-value
+pairs can be a string that describes a &lt;a href=&#34;https://github.com/Igalia/pflua/blob/master/doc/pfmatch.md&#34;&gt;pfmatch&lt;/a&gt;
+program.&lt;/p&gt;
+
+&lt;p&gt;For example, here is a rule that only drops Bittorrent flows if there are at least 5
+packets in the flow and the destination IP address is &lt;code&gt;10.10.10.22&lt;/code&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #204a87; font-weight: bold&#34;&gt;local&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;rules&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;BITTORRENT&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;[[match { flow_count &amp;gt;= 5 and&lt;/span&gt;
+&lt;span style=&#34;color: #4e9a06&#34;&gt;                                         dst net 10.10.10.22&lt;/span&gt;
+&lt;span style=&#34;color: #4e9a06&#34;&gt;                                       =&amp;gt; drop;&lt;/span&gt;
+&lt;span style=&#34;color: #4e9a06&#34;&gt;                                       otherwise =&amp;gt; accept }]]&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt;
+                &lt;span style=&#34;color: #000000&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;accept&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;With this change, you should see 36 accepted packets and 17 dropped packets with
+the pcap file from earlier.&lt;/p&gt;
+
+&lt;h2 id=&#34;making-the-firewall-more-realistic:8c27d0d0b409c1de1867fdc9a128c72c&#34;&gt;Making the firewall more realistic&lt;/h2&gt;
+
+&lt;p&gt;So far, our firewall only works with capture files and not real traffic coming in
+from a NIC. If you have a test machine with two NICs, you can replace the packet reader
+and writers with apps that connect to the NICs (assuming you have some Intel 10G NICs
+or another NIC supported by Snabb).&lt;/p&gt;
+
+&lt;p&gt;First, you will need an additional module import at the top:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #204a87; font-weight: bold&#34;&gt;local&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;driver&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #204a87&#34;&gt;require&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;apps.intel.intel_app&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;driver&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This imports &lt;code&gt;intel_driver&lt;/code&gt; app which is used to receive and send
+packets for an Intel 10G NIC. The idea is to replace the &lt;code&gt;net1&lt;/code&gt;
+and &lt;code&gt;net2&lt;/code&gt; app instances from before with the Intel app.&lt;/p&gt;
+
+&lt;p&gt;Note: if you don&amp;rsquo;t have a supported NIC, you can also test this with
+the &lt;a href=&#34;https://snabbco.github.io/#rawsocket-app-apps.socket.raw&#34;&gt;RawSocket&lt;/a&gt;
+app which uses a kernel-managed network interface. Just replace the
+above line with:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #204a87; font-weight: bold&#34;&gt;local&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;driver&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #204a87&#34;&gt;require&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;apps.socket.raw&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;RawSocket&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The new app config declarations should look like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #8f5902; font-style: italic&#34;&gt;-- replace the pciaddr field with the appropriate result&lt;/span&gt;
+&lt;span style=&#34;color: #8f5902; font-style: italic&#34;&gt;-- use &amp;#39;lspci&amp;#39; to see what your PCI addresses are&lt;/span&gt;
+&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;net1&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;driver&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;pciaddr&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;81:00.0&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;})&lt;/span&gt;
+&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;net2&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;driver&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;pciaddr&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;82:00.0&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;})&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;(For &lt;code&gt;RawSocket&lt;/code&gt;, the third argument should be a string for the network
+ interface, e.g., &lt;code&gt;&amp;quot;eth0&amp;quot;&lt;/code&gt;)&lt;/p&gt;
+
+&lt;p&gt;The Intel driver takes a PCI address as a mandatory argument to specify the
+appropriate NIC. There are also other arguments that you can supply which are
+detailed in the &lt;a href=&#34;https://snabbco.github.io/#configuration&#34;&gt;API docs&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The link declarations also need to change, because the Intel app uses
+different names (&lt;code&gt;tx&lt;/code&gt; and &lt;code&gt;rx&lt;/code&gt;) from the pcap apps. The new links
+look like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;link&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;net1.tx -&amp;gt; scanner.south&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;link&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;scanner.north -&amp;gt; firewall.input&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;link&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;firewall.output -&amp;gt; net2.rx&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;link&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;firewall.reject -&amp;gt; net2.rx&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;With that change, you should be able to filter packets from the first NIC to
+the second using the firewall app. You can run the program like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;sudo ./snabb example_firewall
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;without any arguments since we are no longer passing in file paths.&lt;/p&gt;
+
+&lt;h3 id=&#34;filtering-packets-in-the-other-direction:8c27d0d0b409c1de1867fdc9a128c72c&#34;&gt;Filtering packets in the other direction&lt;/h3&gt;
+
+&lt;p&gt;You may have noticed that the current firewall configuration only filters packets
+going in one direction: from the first NIC to the second. There&amp;rsquo;s a good chance,
+however, that you will also wish to scan and filter outbound packets going out of
+the network.&lt;/p&gt;
+
+&lt;p&gt;To set that up, you will need two instances of the &lt;code&gt;L7Fw&lt;/code&gt; app, one for each
+direction of traffic. On the other hand, you will only need one &lt;code&gt;L7Spy&lt;/code&gt; since
+it is set up for bidirectional packet flows.&lt;/p&gt;
+
+&lt;p&gt;The setup looks like this:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #8f5902; font-style: italic&#34;&gt;-- with the&lt;/span&gt;
+&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;net1&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;driver&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;pciaddr&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;81:00.0&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;})&lt;/span&gt;
+&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;net2&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;driver&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;pciaddr&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;82:00.0&amp;quot;&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;})&lt;/span&gt;
+
+&lt;span style=&#34;color: #8f5902; font-style: italic&#34;&gt;-- Set up two firewalls this time&lt;/span&gt;
+&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;scanner&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;spy&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;L7Spy&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;scanner&lt;/span&gt; &lt;span style=&#34;color: #ce5c00; font-weight: bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;s&lt;/span&gt; &lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;})&lt;/span&gt;
+&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;firewall1&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;fw&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;L7Fw&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;fw_config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;app&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;firewall2&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;fw&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;L7Fw&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #000000&#34;&gt;fw_config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color: #8f5902; font-style: italic&#34;&gt;-- Incoming packets&lt;/span&gt;
+&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;link&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;net1.tx -&amp;gt; scanner.south&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;link&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;scanner.north -&amp;gt; firewall1.input&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;link&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;firewall1.output -&amp;gt; net2.rx&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;link&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;firewall1.reject -&amp;gt; net2.rx&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+
+&lt;span style=&#34;color: #8f5902; font-style: italic&#34;&gt;-- Outgoing packets&lt;/span&gt;
+&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;link&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;net2.tx -&amp;gt; scanner.north&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;link&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;scanner.south -&amp;gt; firewall2.input&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;link&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;firewall2.output -&amp;gt; net1.rx&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #000000&#34;&gt;config&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;link&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #000000&#34;&gt;c&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #4e9a06&#34;&gt;&amp;quot;firewall2.reject -&amp;gt; net1.rx&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #000000; font-weight: bold&#34;&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that the two firewall app instances use the same set of rules. You may wish
+to configure them so that the rules are different based on the direction of traffic,
+in which case you can just specify different rule tables for each instance.&lt;/p&gt;
+
+&lt;h2 id=&#34;wrapping-up:8c27d0d0b409c1de1867fdc9a128c72c&#34;&gt;Wrapping up&lt;/h2&gt;
+
+&lt;p&gt;With those last changes, the example program is getting close to what a
+realistic deployment of &lt;span class=&#34;appname&#34;&gt;Snabbwall&lt;/span&gt; might look like.
+There are a few aspects that would need adjustment for a real deployment.&lt;/p&gt;
+
+&lt;p&gt;For example, you may wish to adjust the invocation of &lt;code&gt;engine.main&lt;/code&gt;
+to remove the &lt;code&gt;duration&lt;/code&gt; argument so that the firewall runs indefinitely.&lt;/p&gt;
+
+&lt;p&gt;To aid in debugging, it may be desirable to log actions to the system
+log. To enable logging for the &lt;code&gt;L7Fw&lt;/code&gt; app set the &lt;code&gt;logging&lt;/code&gt; key in
+&lt;code&gt;fw_config&lt;/code&gt; to &lt;code&gt;&amp;quot;on&amp;quot;&lt;/code&gt;. This will log dropped packets to the system log.&lt;/p&gt;
+
+&lt;p&gt;If you would like to hack on the Snabbwall apps themselves, the source code is
+available in the &lt;a href=&#34;https://github.com/Igalia/snabb/tree/snabbwall/src/apps/wall&#34;&gt;src/apps/wall&lt;/a&gt;
+directory. Please feel free to file any bug reports or pull requests via
+the &lt;a href=&#34;https://github.com/Igalia/snabb/tree/snabbwall&#34;&gt;Github page&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Third milestone: SnabbWall can now analyze traffic</title>
+      <link>http://snabbwall.org/news/2016/08/18/third-milestone-snabbwall-can-now-analyze-traffic</link>
+      <pubDate>Thu, 18 Aug 2016 12:14:20 +0300</pubDate>
+      
+      <guid>http://snabbwall.org/news/2016/08/18/third-milestone-snabbwall-can-now-analyze-traffic</guid>
+      <description>&lt;p&gt;After a small hiatus, work on &lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt; is
+progressing steadily again: the &lt;code&gt;L7Spy&lt;/code&gt; Snabb application and the &lt;code&gt;snabb wall
+spy&lt;/code&gt; command, which can be used to scan network traffic and detect L7 data
+flows, have landed in the repository. Our main developer has &lt;a href=&#34;https://perezdecastro.org/2016/snabbwalls-l7spy-analyzer.html&#34;&gt;written a
+lengthy post&lt;/a&gt; about these features, which completes the third
+milestone of the &lt;a href=&#34;http://snabbwall.org/roadmap/&#34;&gt;development roadmap&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;https://github.com/aperezdc/ljndpi/&#34;&gt;ljndpi&lt;/a&gt; FFI binding has received updates as well. Starting with
+&lt;a href=&#34;https://github.com/aperezdc/ljndpi/releases/tag/v0.0.3&#34;&gt;version 0.0.3&lt;/a&gt;, it can be used with nDPI 1.8; and in order to ease
+adoption of &lt;code&gt;ljndpi&lt;/code&gt; by projects other than &lt;span
+class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt;, the module has been &lt;a href=&#34;https://luarocks.org/modules/aperezdc/ljndpi&#34;&gt;uploaded to the
+LuaRocks repository&lt;/a&gt;. For more details, you can read
+&lt;a href=&#34;https://perezdecastro.org/2016/ljndpi-0.0.3-released.html&#34;&gt;Adrián&amp;rsquo;s article on this topic&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Development reaches second milestone</title>
+      <link>http://snabbwall.org/news/2016/01/25/development-reaches-second-milestone</link>
+      <pubDate>Mon, 25 Jan 2016 15:40:29 +0200</pubDate>
+      
+      <guid>http://snabbwall.org/news/2016/01/25/development-reaches-second-milestone</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;https://github.com/aperezdc/ljndpi/releases/tag/v0.0.1&#34;&gt;first release&lt;/a&gt; of &lt;a href=&#34;https://github.com/aperezdc/ljndpi&#34;&gt;ljndpi&lt;/a&gt;, our binding for the &lt;a href=&#34;http://www.ntop.org/products/deep-packet-inspection/ndpi/&#34;&gt;nDPI&lt;/a&gt; deep packet inspection library, marks the completion of the second milestone of the &lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt; development &lt;a href=&#34;http://snabbwall.org/roadmap/&#34;&gt;roadmap&lt;/a&gt;. Our lead developer has written &lt;a href=&#34;http://perezdecastro.org/2016/ljndi-snabbwall-sidekick.html&#34;&gt;an article&lt;/a&gt; explaning how it was implemented.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Introducing SnabbWall</title>
+      <link>http://snabbwall.org/news/2015/12/31/introducing-snabbwall</link>
+      <pubDate>Thu, 31 Dec 2015 12:39:13 +0200</pubDate>
+      
+      <guid>http://snabbwall.org/news/2015/12/31/introducing-snabbwall</guid>
+      <description>&lt;p&gt;The project is officially started!  &lt;a href=&#34;http://perezdecastro.org&#34;&gt;Adrián Pérez&lt;/a&gt; has &lt;a href=&#34;http://perezdecastro.org/2015/introducing-snabbwall.html&#34;&gt;posted a writeup&lt;/a&gt; introducing the project and commenting on some of aspects of the &lt;a href=&#34;http://snabbwall.org/design/&#34;&gt;design&lt;/a&gt; of &lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Design</title>
+      <link>http://snabbwall.org/design/</link>
+      <pubDate>Tue, 22 Dec 2015 23:26:17 +0200</pubDate>
+      
+      <guid>http://snabbwall.org/design/</guid>
+      <description>
+
+&lt;h2 id=&#34;overview:83772ba7ad0304b1562d08f190539946&#34;&gt;Overview&lt;/h2&gt;
+
+&lt;p&gt;&lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt; is a &lt;em&gt;modular&lt;/em&gt;, &lt;em&gt;application-level&lt;/em&gt; (Layer-7) firewall &lt;em&gt;suite&lt;/em&gt; for &lt;a href=&#34;http://snabb.co&#34;&gt;Snabb&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;As a &lt;em&gt;modular&lt;/em&gt; system, it provides a set of components which can be reused in other Snabb designs.&lt;/p&gt;
+
+&lt;p&gt;As an &lt;em&gt;application-level&lt;/em&gt; (Layer-7) firewall, it is able to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Inspect network traffic and detect flows of related data, and pinpoint which application has produced a certain data flow.&lt;/li&gt;
+&lt;li&gt;Filter (drop, reject, or accept) packets using criteria specified in a set of rules, which can use the information inferred by inspecting the packets.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;As a &lt;em&gt;suite&lt;/em&gt;, it includes a complete firewall program out of the box.&lt;/p&gt;
+
+&lt;h2 id=&#34;architecture:83772ba7ad0304b1562d08f190539946&#34;&gt;Architecture&lt;/h2&gt;
+
+&lt;p&gt;&lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/Span&gt; takes advantage of the &lt;a href=&#34;https://github.com/SnabbCo/snabb/blob/master/src/README.md#introduction&#34;&gt;separation in functional components&lt;/a&gt;, called &lt;em&gt;applications&lt;/em&gt; in Snabb jargon. The following diagram contains a simplified view of the system:&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://snabbwall.org/images/diagrams/arch-blocks.png&#34; alt=&#34;Building blocks&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Building blocks
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;The main components are &lt;strong&gt;L7 Spy&lt;/strong&gt; and &lt;strong&gt;L7 Firewall&lt;/strong&gt;, both are Snabb applications:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;L7 Spy&lt;/strong&gt; (or &lt;code&gt;L7spy&lt;/code&gt; in short) inspects ingress network traffic, identifies related packets to group them in a &lt;em&gt;related data flow&lt;/em&gt;, and —if possible— determines which application has generated the data flow. This is done with the aid of the &lt;a href=&#34;http://www.ntop.org/products/deep-packet-inspection/ndpi/&#34;&gt;nDPI&lt;/a&gt; packet inspection library. The information gathered is attached to each packet as &lt;em&gt;metadata&lt;/em&gt;, and the packets are passed through unmodified.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;L7 Firewall&lt;/strong&gt; (or &lt;code&gt;L7fw&lt;/code&gt; in short) receives a set of filtering &lt;em&gt;rules&lt;/em&gt;, tries to match ingress packets with each rule, and performs its associated action. The rules can perform matches on the metadata generated by the &lt;em&gt;L7 Spy&lt;/em&gt; application.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;applications:83772ba7ad0304b1562d08f190539946&#34;&gt;Applications&lt;/h2&gt;
+
+&lt;h3 id=&#34;l7-spy:83772ba7ad0304b1562d08f190539946&#34;&gt;L7 Spy&lt;/h3&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://snabbwall.org/images/diagrams/app-l7spy.png&#34; alt=&#34;L7 Spy application&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        L7 Spy application
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;The &lt;strong&gt;L7 Spy&lt;/strong&gt; (&lt;code&gt;L7spy&lt;/code&gt;) application receives packets from another Snabb application as input, analyzes the packets it receives, and places them unchanged in the output. As a by-product of analyzing the packets, it may generate metadata indicating the kind of application and data payload that the packet contains. This metadata is de-coupled from the original packet data —which remains unchanged— and can be consumed by other Snabb applications-&lt;/p&gt;
+
+&lt;p&gt;Each instance of the &lt;code&gt;L7spy&lt;/code&gt; application maintain an internal &lt;em&gt;state&lt;/em&gt; which is updated as each packet is scanned. It contains information about previously inspected packets which is used to further improve identification of packets in the future. The &lt;em&gt;state&lt;/em&gt; is detached from the &lt;code&gt;L7fw&lt;/code&gt; application and two (or more) instances can share the same state:&lt;/p&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://snabbwall.org/images/diagrams/app-l7spy-shared-state.png&#34; alt=&#34;Using a shared L7 Spy state&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        Using a shared L7 Spy state
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;The main use case for a the shared &lt;em&gt;state&lt;/em&gt; is correlating traffic which belongs to the same application flowing in both “send” and “receive” directions.&lt;/p&gt;
+
+&lt;h3 id=&#34;l7-firewall:83772ba7ad0304b1562d08f190539946&#34;&gt;L7 Firewall&lt;/h3&gt;
+
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://snabbwall.org/images/diagrams/app-l7fw.png&#34; alt=&#34;L7 Firewall application&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;p&gt;
+        L7 Firewall application
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;The &lt;strong&gt;L7 Firewall&lt;/strong&gt; (&lt;code&gt;L7fw&lt;/code&gt;) application receives packets from another Snabb application as input, applies a set of packet filtering &lt;em&gt;rules&lt;/em&gt;, and either &lt;em&gt;drops&lt;/em&gt;, &lt;em&gt;rehects&lt;/em&gt;, or &lt;em&gt;accepts&lt;/em&gt; the packet.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Dropping&lt;/em&gt; a packet plainly ignores it, without forwarding it to the &lt;em&gt;output&lt;/em&gt;. The net effect is the same as if the packet were lost.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Rejecting&lt;/em&gt;, similarly, does not forward it to the &lt;em&gt;output&lt;/em&gt;, but the sender of the packet is notified about the inability of delivering the packet by transmitting the appropriate ICMP messages to the sender.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Accepting&lt;/em&gt; a packet forwards it to the &lt;em&gt;output&lt;/em&gt;, effectively letting it pass through the firewall.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note that the application by itself is unidirectional. While this may seem counterintuitive, allows for greater flexibility:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Bidirectional filtering —both “send” and “receive” directions— is achieved using two instances with an optionally shared set of &lt;em&gt;rules&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;In many scenarios filtering is done in one direction only, and it is possible to use a single instance of the application — with reduced overhead. For example, most —if not all— of the work done by a firewall in front of a server is to only accept packets for the services provided by the server.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;programs:83772ba7ad0304b1562d08f190539946&#34;&gt;Programs&lt;/h2&gt;
+
+&lt;p&gt;The &lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt; suite ships with a ready to use program which uses the &lt;a href=&#34;#l7-spy:83772ba7ad0304b1562d08f190539946&#34;&gt;L7 Spy&lt;/a&gt; and &lt;a href=&#34;#l7-firewall:83772ba7ad0304b1562d08f190539946&#34;&gt;L7 Firewall&lt;/a&gt; applications to implement a Layer-7 stateful firewall.&lt;/p&gt;
+
+&lt;p&gt;This application, runnable using the &lt;code&gt;snabb wall&lt;/code&gt; command, includes support for the following features:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Loading its configuration and filtering rule sets from from configuration files. The syntax of the configuration files is an &lt;a href=&#34;https://en.wikipedia.org/wiki/Domain-specific_language#Usage_patterns&#34;&gt;internal DSL&lt;/a&gt; based on Lua. This takes advantage of the fact that the language is particularly well suited for &lt;a href=&#34;http://www.lua.org/pil/10.1.html&#34;&gt;data description&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Support for &lt;em&gt;dropping&lt;/em&gt;, &lt;em&gt;rejecting&lt;/em&gt;, or &lt;em&gt;accepting&lt;/em&gt; packets matched by the filtering rules.&lt;/li&gt;
+&lt;li&gt;Specifying a default policy (&lt;em&gt;drop&lt;/em&gt;, &lt;em&gt;reject&lt;/em&gt;, or &lt;em&gt;accept&lt;/em&gt;) for packets which are not matched by any of the configured filtering rules.&lt;/li&gt;
+&lt;li&gt;Optional logging and accounting of matched packets.&lt;/li&gt;
+&lt;li&gt;Operating in &lt;em&gt;bypass mode&lt;/em&gt;: using two physical NIC endpoints at each side, the traffic received from both sides is analyzed using &lt;a href=&#34;#l7-spy:83772ba7ad0304b1562d08f190539946&#34;&gt;L7spy&lt;/a&gt;, rules are applied using &lt;a href=&#34;#l7-firewall:83772ba7ad0304b1562d08f190539946&#34;&gt;L7fw&lt;/a&gt;, and packets allowed to pass through the firewall are put into the wire at the other side completely unchanged.&lt;/li&gt;
+&lt;li&gt;Operating in &lt;em&gt;hosted mode&lt;/em&gt;: the firewall appears to the host system as a pair of network interfaces (one for each end). In this mode the host system needs to be configured accordingly to forwarding packets into and out of the firewall.&lt;/li&gt;
+&lt;li&gt;Operating in &lt;em&gt;kitchen sink mode&lt;/em&gt;: the firewall passively scans all input packets and gathers information about them, without forwarding them to the output. This can be used together with the logging and accounting support to obtain per-application network statistics.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Roadmap</title>
+      <link>http://snabbwall.org/roadmap/</link>
+      <pubDate>Wed, 02 Dec 2015 15:10:01 +0200</pubDate>
+      
+      <guid>http://snabbwall.org/roadmap/</guid>
+      <description>&lt;p&gt;The &lt;a href=&#34;http://snabbwall.org/development/&#34;&gt;development&lt;/a&gt; of &lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt; has been divided into the following milestones:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Milestone&lt;/th&gt;
+&lt;th&gt;Status&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Design&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://snabbwall.org/design/&#34;&gt;completed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Decide the overall architecture of the system, which will use the &lt;a href=&#34;http://www.ntop.org/products/deep-packet-inspection/ndpi/&#34;&gt;nDPI&lt;/a&gt; packet inspection library. In particular, how access to the library is orchestrated will determine how other parts of the system have to be implemented, and care must be taken to avoid overhead when invoking its functions.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Library Bindings&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://perezdecastro.org/2016/ljndi-snabbwall-sidekick.html&#34;&gt;completed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Implement the Lua binding for nDPI, and any additional support code which may be needed by it.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;L7 Flow Detector&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://perezdecastro.org/2016/snabbwalls-l7spy-analyzer.html&#34;&gt;completed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Implement a reusable component for Snabb which detects application-level (L7) traffic flows, plus test programs and documentation.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;L7 Firewall Application&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.asumu.xyz/blog/2017/01/27/snabbwall-s-firewall-app-l7fw/&#34;&gt;completed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Implement a Snabb Switch application/program which can accept, drop or reject traffic based on the application-level data flows, using the component developed in the previous phase.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Documentation&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.asumu.xyz/blog/2017/02/21/optimizing-snabbwall/&#34;&gt;completed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Complete the documentation to cover the public API of the flow detector component, a guide for Snabb developers, and an user-oriented manual for the firewall application.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Testing and Benchmarking&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.asumu.xyz/blog/2017/02/21/optimizing-snabbwall/&#34;&gt;completed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;Provide a benchmark and test suite, plus performance reports.&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Upstreaming&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.asumu.xyz/blog/2017/04/20/upstreaming-snabbwall/&#34;&gt;completed&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;The final goal is to have SnabbWall in good shape to make it available in the upstream Snabb Switch repository.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Note that, while the milestones above are detailed in a linear way, some tasks from different phases can —an may— be carried in parallel. For example, the documentation and upstreaming efforts are very likely to be done in parallel with the development.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>http://snabbwall.org/development/</link>
+      <pubDate>Tue, 01 Dec 2015 23:27:38 +0200</pubDate>
+      
+      <guid>http://snabbwall.org/development/</guid>
+      <description>
+
+&lt;p&gt;Development of &lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt; takes place in &lt;a href=&#34;https://github.com/Igalia/snabb&#34;&gt;Igalia&amp;rsquo;s development branch&lt;/a&gt; of Snabb with &lt;code&gt;snabbwall&lt;/code&gt; being the main development branch. Currently SnabbWall is based on the &lt;a href=&#34;https://github.com/SnabbCo/snabb/releases/tag/v2017.04&#34;&gt;Snabb 2017.04 &amp;ldquo;Dragon&amp;rdquo;&lt;/a&gt; stable release.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://snabbwall.org/roadmap/&#34;&gt;project roadmap&lt;/a&gt; provides a good overview of the current development status.&lt;/p&gt;
+
+&lt;h2 id=&#34;getting-started:c51f1b783d6e6b3bc97ce5906e9605d3&#34;&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;Setting up Snabb Switch for development takes just a few minutes:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #f8f8f8&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;git clone git://github.com/Igalia/snabb
+cd snabb
+git checkout snabbwall
+make -j
+src/snabb --help
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;snabb&lt;/code&gt; binary is stand-alone, includes all the Snabb applications —Snabb Wall among them—, and can be copied between machines.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
