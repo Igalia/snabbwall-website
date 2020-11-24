@@ -3,71 +3,71 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://snabbwall.org/news/</loc>
+    <loc>http://snabbwall.igalia.com/news/</loc>
     <lastmod>2017-04-20T16:00:00-08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://snabbwall.org/news/2017/04/20/sixth-milestone-upstreaming/</loc>
+    <loc>http://snabbwall.igalia.com/news/2017/04/20/sixth-milestone-upstreaming/</loc>
     <lastmod>2017-04-20T16:00:00-08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://snabbwall.org/</loc>
+    <loc>http://snabbwall.igalia.com/</loc>
     <lastmod>2017-04-20T16:00:00-08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://snabbwall.org/news/2017/02/23/fifth-milestone-documentation-and-benchmarking/</loc>
+    <loc>http://snabbwall.igalia.com/news/2017/02/23/fifth-milestone-documentation-and-benchmarking/</loc>
     <lastmod>2017-02-23T14:00:00-08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://snabbwall.org/news/2017/02/08/fourth-milestone-we-have-a-firewall/</loc>
+    <loc>http://snabbwall.igalia.com/news/2017/02/08/fourth-milestone-we-have-a-firewall/</loc>
     <lastmod>2017-02-08T16:52:43+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://snabbwall.org/guide/</loc>
+    <loc>http://snabbwall.igalia.com/guide/</loc>
     <lastmod>2017-02-03T19:40:00-08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://snabbwall.org/news/2016/08/18/third-milestone-snabbwall-can-now-analyze-traffic/</loc>
+    <loc>http://snabbwall.igalia.com/news/2016/08/18/third-milestone-snabbwall-can-now-analyze-traffic/</loc>
     <lastmod>2016-08-18T12:14:20+03:00</lastmod>
   </url>
   
   <url>
-    <loc>http://snabbwall.org/news/2016/01/25/development-reaches-second-milestone/</loc>
+    <loc>http://snabbwall.igalia.com/news/2016/01/25/development-reaches-second-milestone/</loc>
     <lastmod>2016-01-25T15:40:29+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://snabbwall.org/news/2015/12/31/introducing-snabbwall/</loc>
+    <loc>http://snabbwall.igalia.com/news/2015/12/31/introducing-snabbwall/</loc>
     <lastmod>2015-12-31T12:39:13+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://snabbwall.org/design/</loc>
+    <loc>http://snabbwall.igalia.com/design/</loc>
     <lastmod>2015-12-22T23:26:17+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://snabbwall.org/roadmap/</loc>
+    <loc>http://snabbwall.igalia.com/roadmap/</loc>
     <lastmod>2015-12-02T15:10:01+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://snabbwall.org/development/</loc>
+    <loc>http://snabbwall.igalia.com/development/</loc>
     <lastmod>2015-12-01T23:27:38+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://snabbwall.org/categories/</loc>
+    <loc>http://snabbwall.igalia.com/categories/</loc>
   </url>
   
   <url>
-    <loc>http://snabbwall.org/tags/</loc>
+    <loc>http://snabbwall.igalia.com/tags/</loc>
   </url>
   
 </urlset>
