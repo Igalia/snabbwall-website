@@ -1,0 +1,28 @@
+#! /bin/sh
+
+VER='0.78.2'
+SHA256='6c139580bf42dd66615f61cb33d62fc47cb855790d744050d78924bf1f48df0d'
+URLBASE='https://github.com/gohugoio/hugo/releases/download'
+
+# Prepare.
+set -e
+mkdir -p "$1"
+cd "$1"
+
+# Download.
+URL="${URLBASE}/v${VER}/hugo_${VER}_Linux-64bit.tar.gz"
+echo "Fetching ${URL}"
+rm -f ",hugo-${VER}.tar.gz"
+curl -\# -Lo ",hugo-${VER}.tar.gz" "${URL}"
+mv -T ",hugo-${VER}.tar.gz" "hugo-${VER}.tar.gz"
+
+# Check.
+echo "${SHA256}  hugo-${VER}.tar.gz" > sums
+sha256sum -c sums
+rm sums
+
+# Unpack.
+tar -xzf "hugo-${VER}.tar.gz" hugo
+
+# Clean.
+rm "hugo-${VER}.tar.gz"

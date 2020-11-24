@@ -13,20 +13,17 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+      - name: Cache Hugo
+        id: cache-hugo
+        uses: actions/cache@v2
+        with:
+          path: ".hugo"
+          key: ${{ runner.os }}-hugo-${{ hashFiles('.github/hugo') }}
       - name: Fetch Hugo
-        run: |
-          VER=0.78.2
-          SHA256=26410c5ddf2124d6d99b3d0ee00dcae1e16c1a3ccb9feae025d76c0f3c04745e
-          URLBASE=https://github.com/gohugoio/hugo/releases/download
-          :
-          rm -f ".dl/,hugo-${VER}.tar.gz"
-          curl --create-dirs -Lo ".dl/,hugo-${VER}.tar.gz" \
-            "$URLBASE/v${VER}/hugo_${VER}_Linux-64bit.tar.gz"
-          mv -vT ".dl/,hugo-${VER}.tar.gz" ".dl/hugo-${VER}.tar.gz"
-          tar -vxzf ".dl/hugo-$VER.tar.gz" hugo
+        if: steps.cache-hugo.outputs.cache-hit != 'true'
+        run: .github/hugo .hugo
       - name: Build
-        run:
-          ./hugo -d public
+        run: .hugo/hugo -d public
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
