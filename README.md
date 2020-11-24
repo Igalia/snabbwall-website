@@ -1,6 +1,6 @@
 # SnabbWall website
 
-This repository contains the sources for the [SnabbWall website](http://snabbwall.org).
+This repository contains the sources for the [SnabbWall website](http://snabbwall.igalia.com).
 
 ## Contributing
 
