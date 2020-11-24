@@ -10,10 +10,11 @@
 			<a href="http://snabb.co">Snabb</a>.
 		</p>
 
-		{{ if .Site.Sections.news.Pages }}
+		{{ $news := .Site.GetPage "/news" }}
+		{{ if $news }}
 		<h2>Latest Updates</h2>
 		<ul class="news-list">
-		{{ range first 3 .Site.Sections.news.Pages }}
+		{{ range first 3 $news.Pages }}
 			<li>
 				<span class="date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
 				<a href="{{ .Permalink }}">{{ .Title }}</a>
