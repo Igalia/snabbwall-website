@@ -3,7 +3,7 @@
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.15" />
+  <meta name="generator" content="Hugo 0.78.2" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -57,348 +57,260 @@
 		<div class="content container">
 			<div class="post">
 			 	<h1>Guide</h1>
-			      
-
-<p>This document is a high-level guide that describes how to use <span class="appname">SnabbWall</span>
+			      <p>This document is a high-level guide that describes how to use <!-- raw HTML omitted -->SnabbWall<!-- raw HTML omitted -->
 to set up a basic firewall. See the <a href="http://snabbwall.org/design/">design</a> page for background on the basic
-philosophy and design of <span class="appname">SnabbWall</Span>.</p>
-
-<h2 id="use-case:8c27d0d0b409c1de1867fdc9a128c72c">Use-case</h2>
-
+philosophy and design of <!-- raw HTML omitted -->SnabbWall<!-- raw HTML omitted -->.</p>
+<h2 id="use-case">Use-case</h2>
 <p>This guide will use a concrete use-case to illustrate how one might set up a
-<span class="appname">SnabbWall</Span> deployment.
+<!-- raw HTML omitted -->SnabbWall<!-- raw HTML omitted --> deployment.
 Imagine that you are running a public network, maybe a cafe hotspot or a corporate guest network,
 and wish to block Bittorrent traffic to save on bandwidth.</p>
-
 <p>To simplify the setup, we will start with a program that simulates this network activity
 by reading and writing packet capture files (in pcap format). Near the end, the
 document explains what aspects need to change in order to run the firewall with real
 network interfaces.</p>
-
-<p>The diagram below from the design page shows a typical <span class="appname">SnabbWall</Span>
+<p>The diagram below from the design page shows a typical <!-- raw HTML omitted -->SnabbWall<!-- raw HTML omitted -->
 configuration.</p>
-
-
-<figure >
-    
-        <img src="/images/diagrams/arch-blocks.png" alt="Building blocks" />
-    
-    
-    <figcaption>
-        <p>
-        Building blocks
-        
-            
-        
-        </p> 
-    </figcaption>
-    
+<figure>
+    <img src="/images/diagrams/arch-blocks.png"
+         alt="Building blocks"/> <figcaption>
+            <p>Building blocks</p>
+        </figcaption>
 </figure>
 
-
-<p>The <span class="appname">Snabbwall</span> suite comes with two main apps:
-<a href="http://snabbwall.org/design/#l7-spy:83772ba7ad0304b1562d08f190539946"><code>L7Spy</code></a> (a packet scanner)
-and <a href="http://snabbwall.org/design/#l7-firewall:83772ba7ad0304b1562d08f190539946"><code>L7Fw</code></a> (a firewall). As you can
+<p>The <!-- raw HTML omitted -->Snabbwall<!-- raw HTML omitted --> suite comes with two main apps:
+<a href="http://snabbwall.org/design/#l7-spy"><code>L7Spy</code></a> (a packet scanner)
+and <a href="http://snabbwall.org/design/#l7-firewall"><code>L7Fw</code></a> (a firewall). As you can
 see above, the scanner app consumes and scans packets coming into the program
 (e.g., from a NIC, a pcap reader, or any other app).</p>
-
 <p>In a simple setup, the scanner forwards packets to the firewall app. The firewall consults the
 data from the scanner and can make forwarding decisions, based on a set of firewall rules.</p>
-
 <p>The firewall app drops packets as necessary according to the firewall rules and
 forwards the rest to the next app. For example, in the diagram above the firewall sends packets
 out to another NIC.</p>
-
-<h2 id="installation:8c27d0d0b409c1de1867fdc9a128c72c">Installation</h2>
-
+<h2 id="installation">Installation</h2>
 <p>Before getting into the configuration details, let&rsquo;s quickly go over how to obtain a copy of
 Snabbwall. (Feel free to move on to the next section if you&rsquo;ve already installed it)</p>
-
 <p>For this guide, you will want to obtain a source code distribution from the
 Github <a href="https://github.com/aperezdc/snabb/releases">releases</a> page. To build Snabbwall, just
 unpack the source code archive and run <code>make</code> in the unpacked directory.</p>
-
 <p>You will also need to obtain and build a copy of the <a href="https://github.com/ntop/nDPI">nDPI</a>
 library either through your operating system&rsquo;s package manager or via Github.
 Snabbwall will work with nDPI <a href="https://github.com/ntop/nDPI/releases/tag/1.8">v1.8</a>
 (the newest version as of March 2017). The instructions for building nDPI are in the linked
 Github README.</p>
-
 <p>Note: depending on where you install nDPI, you may need to set <code>LD_LIBRARY_PATH</code> when running
 a Snabbwall program to ensure that it can load <code>libndpi.so</code> via the LuaJIT FFI.</p>
-
-<h2 id="first-steps:8c27d0d0b409c1de1867fdc9a128c72c">First steps</h2>
-
+<h2 id="first-steps">First steps</h2>
 <p>To create a runnable firewall, we need to make a Snabb program (a program is a set of Snabb apps that
 are configured to solve a task). If you&rsquo;re not familiar with Snabb programs, you may
 benefit from also reading Snabb&rsquo;s <a href="https://github.com/snabbco/snabb/blob/master/src/doc/getting-started.md">Getting Started</a>
 document.</p>
-
 <p>Here is a barebones firewall program module. To make this runnable,
 name the file <code>example_firewall.lua</code> and put it in the <code>src/program/example_firewall</code>
-directory of your <span class="appname">Snabbwall</span> distribution.</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span style="color: #8f5902; font-style: italic">-- example_firewall.lua</span>
+directory of your <!-- raw HTML omitted -->Snabbwall<!-- raw HTML omitted --> distribution.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lua" data-lang="lua"><span style="color:#8f5902;font-style:italic">-- example_firewall.lua</span>
 
-<span style="color: #204a87">module</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #ce5c00; font-weight: bold">...</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87">package.seeall</span><span style="color: #000000; font-weight: bold">)</span>
+<span style="color:#000">module</span><span style="color:#000;font-weight:bold">(...,</span> <span style="color:#000">package.seeall</span><span style="color:#000;font-weight:bold">)</span>
 
-<span style="color: #8f5902; font-style: italic">-- basic module imports</span>
-<span style="color: #204a87; font-weight: bold">local</span> <span style="color: #000000">raw</span>  <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87">require</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;apps.socket.raw&quot;</span><span style="color: #000000; font-weight: bold">)</span>
-<span style="color: #204a87; font-weight: bold">local</span> <span style="color: #000000">pcap</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87">require</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;apps.pcap.pcap&quot;</span><span style="color: #000000; font-weight: bold">)</span>
-<span style="color: #204a87; font-weight: bold">local</span> <span style="color: #000000">spy</span>  <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87">require</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;apps.wall.l7spy&quot;</span><span style="color: #000000; font-weight: bold">)</span>
-<span style="color: #204a87; font-weight: bold">local</span> <span style="color: #000000">fw</span>   <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87">require</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;apps.wall.l7fw&quot;</span><span style="color: #000000; font-weight: bold">)</span>
-<span style="color: #204a87; font-weight: bold">local</span> <span style="color: #000000">ndpi</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87">require</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;apps.wall.scanner.ndpi&quot;</span><span style="color: #000000; font-weight: bold">)</span>
+<span style="color:#8f5902;font-style:italic">-- basic module imports</span>
+<span style="color:#204a87;font-weight:bold">local</span> <span style="color:#000">raw</span>  <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;apps.socket.raw&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#204a87;font-weight:bold">local</span> <span style="color:#000">pcap</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;apps.pcap.pcap&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#204a87;font-weight:bold">local</span> <span style="color:#000">spy</span>  <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;apps.wall.l7spy&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#204a87;font-weight:bold">local</span> <span style="color:#000">fw</span>   <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;apps.wall.l7fw&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#204a87;font-weight:bold">local</span> <span style="color:#000">ndpi</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;apps.wall.scanner.ndpi&#34;</span><span style="color:#000;font-weight:bold">)</span>
 
-<span style="color: #8f5902; font-style: italic">-- configuration parameters for the l7fw</span>
-<span style="color: #8f5902; font-style: italic">-- replace these with the appropriate values for your firewall host</span>
-<span style="color: #8f5902; font-style: italic">-- for testing purposes, any values are ok</span>
-<span style="color: #204a87; font-weight: bold">local</span> <span style="color: #000000">host_ip</span>  <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;192.168.0.1&quot;</span>
-<span style="color: #204a87; font-weight: bold">local</span> <span style="color: #000000">host_mac</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;01:23:45:67:89:ab&quot;</span>
+<span style="color:#8f5902;font-style:italic">-- configuration parameters for the l7fw</span>
+<span style="color:#8f5902;font-style:italic">-- replace these with the appropriate values for your firewall host</span>
+<span style="color:#8f5902;font-style:italic">-- for testing purposes, any values are ok</span>
+<span style="color:#204a87;font-weight:bold">local</span> <span style="color:#000">host_ip</span>  <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;192.168.0.1&#34;</span>
+<span style="color:#204a87;font-weight:bold">local</span> <span style="color:#000">host_mac</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;01:23:45:67:89:ab&#34;</span>
 
-<span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000">run</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">args</span><span style="color: #000000; font-weight: bold">)</span>
-   <span style="color: #8f5902; font-style: italic">-- an nDPI scanner instance for l7spy and l7fw</span>
-   <span style="color: #204a87; font-weight: bold">local</span> <span style="color: #000000">s</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">ndpi</span><span style="color: #000000; font-weight: bold">:</span><span style="color: #000000">new</span><span style="color: #000000; font-weight: bold">()</span>
+<span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">run</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">args</span><span style="color:#000;font-weight:bold">)</span>
+   <span style="color:#8f5902;font-style:italic">-- an nDPI scanner instance for l7spy and l7fw</span>
+   <span style="color:#204a87;font-weight:bold">local</span> <span style="color:#000">s</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">ndpi</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">new</span><span style="color:#000;font-weight:bold">()</span>
 
-   <span style="color: #8f5902; font-style: italic">-- configuration of the Snabb app network</span>
-   <span style="color: #204a87; font-weight: bold">local</span> <span style="color: #000000">c</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">new</span><span style="color: #000000; font-weight: bold">()</span>
+   <span style="color:#8f5902;font-style:italic">-- configuration of the Snabb app network</span>
+   <span style="color:#204a87;font-weight:bold">local</span> <span style="color:#000">c</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">config.new</span><span style="color:#000;font-weight:bold">()</span>
 
-   <span style="color: #8f5902; font-style: italic">-- a very basic rules table</span>
-   <span style="color: #204a87; font-weight: bold">local</span> <span style="color: #000000">rules</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">default</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;accept&quot;</span> <span style="color: #000000; font-weight: bold">}</span>
+   <span style="color:#8f5902;font-style:italic">-- a very basic rules table</span>
+   <span style="color:#204a87;font-weight:bold">local</span> <span style="color:#000">rules</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">default</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;accept&#34;</span> <span style="color:#000;font-weight:bold">}</span>
 
-   <span style="color: #8f5902; font-style: italic">-- configuration table for l7fw</span>
-   <span style="color: #204a87; font-weight: bold">local</span> <span style="color: #000000">fw_config</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">scanner</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">s</span><span style="color: #000000; font-weight: bold">,</span>
-                       <span style="color: #000000">rules</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">rules</span><span style="color: #000000; font-weight: bold">,</span>
-                       <span style="color: #000000">local_ipv4</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">host_ip</span><span style="color: #000000; font-weight: bold">,</span>
-                       <span style="color: #000000">local_mac</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">host_mac</span> <span style="color: #000000; font-weight: bold">}</span>
+   <span style="color:#8f5902;font-style:italic">-- configuration table for l7fw</span>
+   <span style="color:#204a87;font-weight:bold">local</span> <span style="color:#000">fw_config</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">scanner</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">s</span><span style="color:#000;font-weight:bold">,</span>
+                       <span style="color:#000">rules</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">rules</span><span style="color:#000;font-weight:bold">,</span>
+                       <span style="color:#000">local_ipv4</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">host_ip</span><span style="color:#000;font-weight:bold">,</span>
+                       <span style="color:#000">local_mac</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">host_mac</span> <span style="color:#000;font-weight:bold">}</span>
 
-   <span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">app</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;net1&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">pcap</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">PcapReader</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">args</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #0000cf; font-weight: bold">1</span><span style="color: #000000; font-weight: bold">])</span>
-   <span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">app</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;net2&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">pcap</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">PcapWriter</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">args</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #0000cf; font-weight: bold">2</span><span style="color: #000000; font-weight: bold">])</span>
+   <span style="color:#000">config.app</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;net1&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pcap.PcapReader</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">args</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">])</span>
+   <span style="color:#000">config.app</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;net2&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pcap.PcapWriter</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">args</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">])</span>
 
-   <span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">app</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;scanner&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">spy</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">L7Spy</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">scanner</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">s</span> <span style="color: #000000; font-weight: bold">})</span>
-   <span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">app</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;firewall&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">fw</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">L7Fw</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">fw_config</span><span style="color: #000000; font-weight: bold">)</span>
+   <span style="color:#000">config.app</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;scanner&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">spy.L7Spy</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">scanner</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">s</span> <span style="color:#000;font-weight:bold">})</span>
+   <span style="color:#000">config.app</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;firewall&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">fw.L7Fw</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">fw_config</span><span style="color:#000;font-weight:bold">)</span>
 
-   <span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">link</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;net1.output -&gt; scanner.south&quot;</span><span style="color: #000000; font-weight: bold">)</span>
-   <span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">link</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;scanner.north -&gt; firewall.input&quot;</span><span style="color: #000000; font-weight: bold">)</span>
-   <span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">link</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;firewall.output -&gt; net2.input&quot;</span><span style="color: #000000; font-weight: bold">)</span>
-   <span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">link</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;firewall.reject -&gt; net2.input&quot;</span><span style="color: #000000; font-weight: bold">)</span>
+   <span style="color:#000">config.link</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;net1.output -&gt; scanner.south&#34;</span><span style="color:#000;font-weight:bold">)</span>
+   <span style="color:#000">config.link</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;scanner.north -&gt; firewall.input&#34;</span><span style="color:#000;font-weight:bold">)</span>
+   <span style="color:#000">config.link</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;firewall.output -&gt; net2.input&#34;</span><span style="color:#000;font-weight:bold">)</span>
+   <span style="color:#000">config.link</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;firewall.reject -&gt; net2.input&#34;</span><span style="color:#000;font-weight:bold">)</span>
 
-   <span style="color: #000000">engine</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">configure</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">)</span>
+   <span style="color:#000">engine.configure</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">)</span>
 
-   <span style="color: #8f5902; font-style: italic">-- run for 5 seconds and show the app reports</span>
-   <span style="color: #000000">engine</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">main</span><span style="color: #000000; font-weight: bold">({</span><span style="color: #000000">duration</span><span style="color: #ce5c00; font-weight: bold">=</span><span style="color: #0000cf; font-weight: bold">5</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">report</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">showapps</span><span style="color: #ce5c00; font-weight: bold">=</span><span style="color: #204a87; font-weight: bold">true</span> <span style="color: #000000; font-weight: bold">}})</span>
-<span style="color: #204a87; font-weight: bold">end</span>
-</pre></div>
-
-<p>Let&rsquo;s walk through this step-by-step. At the top, we have several module imports
+   <span style="color:#8f5902;font-style:italic">-- run for 5 seconds and show the app reports</span>
+   <span style="color:#000">engine.main</span><span style="color:#000;font-weight:bold">({</span><span style="color:#000">duration</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">report</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">showapps</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#204a87;font-weight:bold">true</span> <span style="color:#000;font-weight:bold">}})</span>
+<span style="color:#204a87;font-weight:bold">end</span>
+</code></pre></div><p>Let&rsquo;s walk through this step-by-step. At the top, we have several module imports
 and some constant definitions like the IP of the router host called <code>host_ip</code>.</p>
-
 <p>The main part of the program is the <code>run</code> function, which is called by the Snabb
 framework when the program is invoked.</p>
-
 <p>The <code>run</code> function first sets up several definitions. The <code>s</code> variable is the
 packet scanner that our instances of <code>L7Spy</code> and <code>L7Fw</code> will use. The <code>c</code> variable
 is the configuration of the Snabb program.</p>
-
 <p>The <code>rules</code> definition is the table of firewall rules. For now, it&rsquo;s defined to
 accept all packets. We&rsquo;ll update this later.</p>
-
 <p>The <code>fw_config</code> table stores the configuration for the <code>L7Fw</code> app, which takes
 several configuration arguments. It&rsquo;s recommended to fill out the <code>local_ipv4</code>
 (and/or <code>local_ipv6</code>) and <code>local_mac</code> fields, which are used to send out responses
 in case of a <code>reject</code> policy.</p>
-
 <p>The <code>rules</code> and <code>scanner</code> keys are also mandatory.</p>
-
 <p>The <code>config.app</code> and <code>config.link</code> lines are setting up the app network for this
 Snabb program. This is also pretty straightforward. The first four lines instantiate
 the four apps in our app network with their configurations.</p>
-
 <p>The six link lines set up the connections between the apps. The <code>net1</code> app pulls
 in packets from the &ldquo;network interface&rdquo; (though it&rsquo;s just a file for now), and
 pushes them into the <code>scanner</code> app&rsquo;s south end.</p>
-
 <p>The <code>scanner</code> pushes packets from its south end to its north end and vice versa.
 The north end in this case is connected to the firewall, so packets get pushed to
 the firewall after exiting the scanner.</p>
-
 <p>After going through the firewall, the packets are pushed to the <code>net2</code> network
 interface. There are two output links for the firewall, in case you need to
 distinguish forwarded packets from the firewall (on <code>output</code>)
 and error responses that are constructed by the firewall (on <code>reject</code>).</p>
-
-<h2 id="running-the-firewall:8c27d0d0b409c1de1867fdc9a128c72c">Running the firewall</h2>
-
+<h2 id="running-the-firewall">Running the firewall</h2>
 <p>To run the firewall, first recompile Snabb (<code>make</code> in the top-level directory)
 and then invoke it as:</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%">sudo ./snabb example_firewall &lt;input_file&gt;.pcap &lt;output_file&gt;.pcap
-</pre></div>
-
-<p>supplying appropriate pcap file paths. There are many test pcap files available
+<pre><code>sudo ./snabb example_firewall &lt;input_file&gt;.pcap &lt;output_file&gt;.pcap
+</code></pre><p>supplying appropriate pcap file paths. There are many test pcap files available
 in <code>src/program/wall/tests/data</code>.</p>
-
 <p>Note: you need to have <code>libndpi</code> installed to use the packet scanner.
 See the installation instructions from earlier for obtaining nDPI. Without it,
 you may see an error like the following:</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%">ndpi/c.lua:73: libndpi.so: cannot open shared object file: No such file or directory
-</pre></div>
-
-<p>After running the example program, you should see a report that looks similar to this:</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%">apps report:
+<pre><code>ndpi/c.lua:73: libndpi.so: cannot open shared object file: No such file or directory
+</code></pre><p>After running the example program, you should see a report that looks similar to this:</p>
+<pre><code>apps report:
 l7fw
 Accepted packets: 17 (100%)
 Rejected packets: 0 (0%)
 Dropped packets:  0 (0%)
-</pre></div>
-
-<p>The actual number of accepted packets will depend on the pcap file that you use.</p>
-
-<h2 id="using-non-trivial-firewall-rules:8c27d0d0b409c1de1867fdc9a128c72c">Using non-trivial firewall rules</h2>
-
+</code></pre><p>The actual number of accepted packets will depend on the pcap file that you use.</p>
+<h2 id="using-non-trivial-firewall-rules">Using non-trivial firewall rules</h2>
 <p>The firewall rules that we are using now are not very interesting. Let&rsquo;s go back to
 our Bittorrent scenario and consider what is needed to support that.</p>
-
 <p>The firewall rules are specified using a Lua table whose keys are protocol names
 (or <code>&quot;default&quot;</code>) and whose values are strings which describe particular policies for
 that protocol.</p>
-
 <p>For example, to specify that Bittorrent traffic should be blocked entirely, change
 the <code>local rules = ...</code> line above to the following:</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span style="color: #204a87; font-weight: bold">local</span> <span style="color: #000000">rules</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">BITTORRENT</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;drop&quot;</span><span style="color: #000000; font-weight: bold">,</span>
-                <span style="color: #000000">default</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;accept&quot;</span> <span style="color: #000000; font-weight: bold">}</span>
-</pre></div>
-
-<p>Now we can run the example program on some example Bittorrent traffic to test
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lua" data-lang="lua"><span style="color:#204a87;font-weight:bold">local</span> <span style="color:#000">rules</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">BITTORRENT</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;drop&#34;</span><span style="color:#000;font-weight:bold">,</span>
+                <span style="color:#000">default</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;accept&#34;</span> <span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><p>Now we can run the example program on some example Bittorrent traffic to test
 the rules:</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%">sudo ./snabb example_firewall\
+<pre><code>sudo ./snabb example_firewall\
   program/wall/tests/data/BITTORRENT.pcap output.pcap
-</pre></div>
-
-<p>You should see a report with the following numbers:</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%">apps report:
+</code></pre><p>You should see a report with the following numbers:</p>
+<pre><code>apps report:
 l7fw
 Accepted packets: 0 (0%)
 Rejected packets: 0 (0%)
 Dropped packets:  53 (100%)
-</pre></div>
-
-<p>The firewall rules can also be more sophisticated. The right-hand sides of the key-value
+</code></pre><p>The firewall rules can also be more sophisticated. The right-hand sides of the key-value
 pairs can be a string that describes a <a href="https://github.com/Igalia/pflua/blob/master/doc/pfmatch.md">pfmatch</a>
 program.</p>
-
 <p>For example, here is a rule that only drops Bittorrent flows if there are at least 5
 packets in the flow and the destination IP address is <code>10.10.10.22</code>:</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span style="color: #204a87; font-weight: bold">local</span> <span style="color: #000000">rules</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">BITTORRENT</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">[[match { flow_count &gt;= 5 and</span>
-<span style="color: #4e9a06">                                         dst net 10.10.10.22</span>
-<span style="color: #4e9a06">                                       =&gt; drop;</span>
-<span style="color: #4e9a06">                                       otherwise =&gt; accept }]]</span><span style="color: #000000; font-weight: bold">,</span>
-                <span style="color: #000000">default</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;accept&quot;</span> <span style="color: #000000; font-weight: bold">}</span>
-</pre></div>
-
-<p>With this change, you should see 36 accepted packets and 17 dropped packets with
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lua" data-lang="lua"><span style="color:#204a87;font-weight:bold">local</span> <span style="color:#000">rules</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">BITTORRENT</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">[[match { flow_count &gt;= 5 and
+</span><span style="color:#4e9a06">                                         dst net 10.10.10.22
+</span><span style="color:#4e9a06">                                       =&gt; drop;
+</span><span style="color:#4e9a06">                                       otherwise =&gt; accept }]]</span><span style="color:#000;font-weight:bold">,</span>
+                <span style="color:#000">default</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;accept&#34;</span> <span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><p>With this change, you should see 36 accepted packets and 17 dropped packets with
 the pcap file from earlier.</p>
-
-<h2 id="making-the-firewall-more-realistic:8c27d0d0b409c1de1867fdc9a128c72c">Making the firewall more realistic</h2>
-
+<h2 id="making-the-firewall-more-realistic">Making the firewall more realistic</h2>
 <p>So far, our firewall only works with capture files and not real traffic coming in
 from a NIC. If you have a test machine with two NICs, you can replace the packet reader
 and writers with apps that connect to the NICs (assuming you have some Intel 10G NICs
 or another NIC supported by Snabb).</p>
-
 <p>First, you will need an additional module import at the top:</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span style="color: #204a87; font-weight: bold">local</span> <span style="color: #000000">driver</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87">require</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;apps.intel.intel_app&quot;</span><span style="color: #000000; font-weight: bold">).</span><span style="color: #000000">driver</span>
-</pre></div>
-
-<p>This imports <code>intel_driver</code> app which is used to receive and send
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lua" data-lang="lua"><span style="color:#204a87;font-weight:bold">local</span> <span style="color:#000">driver</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;apps.intel.intel_app&#34;</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">driver</span>
+</code></pre></div><p>This imports <code>intel_driver</code> app which is used to receive and send
 packets for an Intel 10G NIC. The idea is to replace the <code>net1</code>
 and <code>net2</code> app instances from before with the Intel app.</p>
-
 <p>Note: if you don&rsquo;t have a supported NIC, you can also test this with
 the <a href="https://snabbco.github.io/#rawsocket-app-apps.socket.raw">RawSocket</a>
 app which uses a kernel-managed network interface. Just replace the
 above line with:</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span style="color: #204a87; font-weight: bold">local</span> <span style="color: #000000">driver</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87">require</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;apps.socket.raw&quot;</span><span style="color: #000000; font-weight: bold">).</span><span style="color: #000000">RawSocket</span>
-</pre></div>
-
-<p>The new app config declarations should look like this:</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span style="color: #8f5902; font-style: italic">-- replace the pciaddr field with the appropriate result</span>
-<span style="color: #8f5902; font-style: italic">-- use &#39;lspci&#39; to see what your PCI addresses are</span>
-<span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">app</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;net1&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">driver</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">pciaddr</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;81:00.0&quot;</span> <span style="color: #000000; font-weight: bold">})</span>
-<span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">app</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;net2&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">driver</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">pciaddr</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;82:00.0&quot;</span> <span style="color: #000000; font-weight: bold">})</span>
-</pre></div>
-
-<p>(For <code>RawSocket</code>, the third argument should be a string for the network
- interface, e.g., <code>&quot;eth0&quot;</code>)</p>
-
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lua" data-lang="lua"><span style="color:#204a87;font-weight:bold">local</span> <span style="color:#000">driver</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">require</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;apps.socket.raw&#34;</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">RawSocket</span>
+</code></pre></div><p>The new app config declarations should look like this:</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lua" data-lang="lua"><span style="color:#8f5902;font-style:italic">-- replace the pciaddr field with the appropriate result</span>
+<span style="color:#8f5902;font-style:italic">-- use &#39;lspci&#39; to see what your PCI addresses are</span>
+<span style="color:#000">config.app</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;net1&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">driver</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">pciaddr</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;81:00.0&#34;</span> <span style="color:#000;font-weight:bold">})</span>
+<span style="color:#000">config.app</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;net2&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">driver</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">pciaddr</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;82:00.0&#34;</span> <span style="color:#000;font-weight:bold">})</span>
+</code></pre></div><p>(For <code>RawSocket</code>, the third argument should be a string for the network
+interface, e.g., <code>&quot;eth0&quot;</code>)</p>
 <p>The Intel driver takes a PCI address as a mandatory argument to specify the
 appropriate NIC. There are also other arguments that you can supply which are
 detailed in the <a href="https://snabbco.github.io/#configuration">API docs</a>.</p>
-
 <p>The link declarations also need to change, because the Intel app uses
 different names (<code>tx</code> and <code>rx</code>) from the pcap apps. The new links
 look like this:</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">link</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;net1.tx -&gt; scanner.south&quot;</span><span style="color: #000000; font-weight: bold">)</span>
-<span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">link</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;scanner.north -&gt; firewall.input&quot;</span><span style="color: #000000; font-weight: bold">)</span>
-<span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">link</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;firewall.output -&gt; net2.rx&quot;</span><span style="color: #000000; font-weight: bold">)</span>
-<span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">link</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;firewall.reject -&gt; net2.rx&quot;</span><span style="color: #000000; font-weight: bold">)</span>
-</pre></div>
-
-<p>With that change, you should be able to filter packets from the first NIC to
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lua" data-lang="lua"><span style="color:#000">config.link</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;net1.tx -&gt; scanner.south&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">config.link</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;scanner.north -&gt; firewall.input&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">config.link</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;firewall.output -&gt; net2.rx&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">config.link</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;firewall.reject -&gt; net2.rx&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</code></pre></div><p>With that change, you should be able to filter packets from the first NIC to
 the second using the firewall app. You can run the program like this:</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%">sudo ./snabb example_firewall
-</pre></div>
-
-<p>without any arguments since we are no longer passing in file paths.</p>
-
-<h3 id="filtering-packets-in-the-other-direction:8c27d0d0b409c1de1867fdc9a128c72c">Filtering packets in the other direction</h3>
-
+<pre><code>sudo ./snabb example_firewall
+</code></pre><p>without any arguments since we are no longer passing in file paths.</p>
+<h3 id="filtering-packets-in-the-other-direction">Filtering packets in the other direction</h3>
 <p>You may have noticed that the current firewall configuration only filters packets
 going in one direction: from the first NIC to the second. There&rsquo;s a good chance,
 however, that you will also wish to scan and filter outbound packets going out of
 the network.</p>
-
 <p>To set that up, you will need two instances of the <code>L7Fw</code> app, one for each
 direction of traffic. On the other hand, you will only need one <code>L7Spy</code> since
 it is set up for bidirectional packet flows.</p>
-
 <p>The setup looks like this:</p>
-<div class="highlight" style="background: #f8f8f8"><pre style="line-height: 125%"><span style="color: #8f5902; font-style: italic">-- with the</span>
-<span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">app</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;net1&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">driver</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">pciaddr</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;81:00.0&quot;</span> <span style="color: #000000; font-weight: bold">})</span>
-<span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">app</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;net2&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">driver</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">pciaddr</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;82:00.0&quot;</span> <span style="color: #000000; font-weight: bold">})</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lua" data-lang="lua"><span style="color:#8f5902;font-style:italic">-- with the</span>
+<span style="color:#000">config.app</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;net1&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">driver</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">pciaddr</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;81:00.0&#34;</span> <span style="color:#000;font-weight:bold">})</span>
+<span style="color:#000">config.app</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;net2&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">driver</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">pciaddr</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;82:00.0&#34;</span> <span style="color:#000;font-weight:bold">})</span>
 
-<span style="color: #8f5902; font-style: italic">-- Set up two firewalls this time</span>
-<span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">app</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;scanner&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">spy</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">L7Spy</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">scanner</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">s</span> <span style="color: #000000; font-weight: bold">})</span>
-<span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">app</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;firewall1&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">fw</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">L7Fw</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">fw_config</span><span style="color: #000000; font-weight: bold">)</span>
-<span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">app</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;firewall2&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">fw</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">L7Fw</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">fw_config</span><span style="color: #000000; font-weight: bold">)</span>
+<span style="color:#8f5902;font-style:italic">-- Set up two firewalls this time</span>
+<span style="color:#000">config.app</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;scanner&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">spy.L7Spy</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000">scanner</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">s</span> <span style="color:#000;font-weight:bold">})</span>
+<span style="color:#000">config.app</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;firewall1&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">fw.L7Fw</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">fw_config</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">config.app</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;firewall2&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">fw.L7Fw</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">fw_config</span><span style="color:#000;font-weight:bold">)</span>
 
-<span style="color: #8f5902; font-style: italic">-- Incoming packets</span>
-<span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">link</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;net1.tx -&gt; scanner.south&quot;</span><span style="color: #000000; font-weight: bold">)</span>
-<span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">link</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;scanner.north -&gt; firewall1.input&quot;</span><span style="color: #000000; font-weight: bold">)</span>
-<span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">link</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;firewall1.output -&gt; net2.rx&quot;</span><span style="color: #000000; font-weight: bold">)</span>
-<span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">link</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;firewall1.reject -&gt; net2.rx&quot;</span><span style="color: #000000; font-weight: bold">)</span>
+<span style="color:#8f5902;font-style:italic">-- Incoming packets</span>
+<span style="color:#000">config.link</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;net1.tx -&gt; scanner.south&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">config.link</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;scanner.north -&gt; firewall1.input&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">config.link</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;firewall1.output -&gt; net2.rx&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">config.link</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;firewall1.reject -&gt; net2.rx&#34;</span><span style="color:#000;font-weight:bold">)</span>
 
-<span style="color: #8f5902; font-style: italic">-- Outgoing packets</span>
-<span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">link</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;net2.tx -&gt; scanner.north&quot;</span><span style="color: #000000; font-weight: bold">)</span>
-<span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">link</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;scanner.south -&gt; firewall2.input&quot;</span><span style="color: #000000; font-weight: bold">)</span>
-<span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">link</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;firewall2.output -&gt; net1.rx&quot;</span><span style="color: #000000; font-weight: bold">)</span>
-<span style="color: #000000">config</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">link</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">c</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;firewall2.reject -&gt; net1.rx&quot;</span><span style="color: #000000; font-weight: bold">)</span>
-</pre></div>
-
-<p>Note that the two firewall app instances use the same set of rules. You may wish
+<span style="color:#8f5902;font-style:italic">-- Outgoing packets</span>
+<span style="color:#000">config.link</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;net2.tx -&gt; scanner.north&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">config.link</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;scanner.south -&gt; firewall2.input&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">config.link</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;firewall2.output -&gt; net1.rx&#34;</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000">config.link</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">c</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;firewall2.reject -&gt; net1.rx&#34;</span><span style="color:#000;font-weight:bold">)</span>
+</code></pre></div><p>Note that the two firewall app instances use the same set of rules. You may wish
 to configure them so that the rules are different based on the direction of traffic,
 in which case you can just specify different rule tables for each instance.</p>
-
-<h2 id="wrapping-up:8c27d0d0b409c1de1867fdc9a128c72c">Wrapping up</h2>
-
+<h2 id="wrapping-up">Wrapping up</h2>
 <p>With those last changes, the example program is getting close to what a
-realistic deployment of <span class="appname">Snabbwall</span> might look like.
+realistic deployment of <!-- raw HTML omitted -->Snabbwall<!-- raw HTML omitted --> might look like.
 There are a few aspects that would need adjustment for a real deployment.</p>
-
 <p>For example, you may wish to adjust the invocation of <code>engine.main</code>
 to remove the <code>duration</code> argument so that the firewall runs indefinitely.</p>
-
 <p>To aid in debugging, it may be desirable to log actions to the system
 log. To enable logging for the <code>L7Fw</code> app set the <code>logging</code> key in
 <code>fw_config</code> to <code>&quot;on&quot;</code>. This will log dropped packets to the system log.</p>
-
 <p>If you would like to hack on the Snabbwall apps themselves, the source code is
 available in the <a href="https://github.com/Igalia/snabb/tree/snabbwall/src/apps/wall">src/apps/wall</a>
 directory. Please feel free to file any bug reports or pull requests via

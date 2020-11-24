@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>News on SnabbWall</title>
@@ -6,120 +6,65 @@
     <description>Recent content in News on SnabbWall</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Apr 2017 16:00:00 -0800</lastBuildDate>
-    <atom:link href="http://snabbwall.org/news/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Thu, 20 Apr 2017 16:00:00 -0800</lastBuildDate><atom:link href="http://snabbwall.org/news/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sixth milestone: upstreaming</title>
-      <link>http://snabbwall.org/news/2017/04/20/sixth-milestone-upstreaming</link>
+      <link>http://snabbwall.org/news/2017/04/20/sixth-milestone-upstreaming/</link>
       <pubDate>Thu, 20 Apr 2017 16:00:00 -0800</pubDate>
       
-      <guid>http://snabbwall.org/news/2017/04/20/sixth-milestone-upstreaming</guid>
-      <description>&lt;p&gt;We have completed the sixth and final development milestone of
-&lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt;, which is to upstream the
-app to the main Snabb repository.&lt;/p&gt;
-
-&lt;p&gt;With this update, we have moved the official Snabbwall branch to
-&lt;a href=&#34;https://github.com/Igalia/snabb/tree/snabbwall&#34;&gt;&lt;code&gt;Igalia/snabb&lt;/code&gt;&lt;/a&gt; on Github in the &lt;code&gt;snabbwall&lt;/code&gt; branch.
-Any further updates will be made to this branch and will be periodically
-upstreamed to the &lt;a href=&#34;https://github.com/snabbco/snabb&#34;&gt;&lt;code&gt;snabbco/snabb&lt;/code&gt;&lt;/a&gt; repository.&lt;/p&gt;
-
-&lt;p&gt;There is a blog post with a few more details &lt;a href=&#34;https://www.asumu.xyz/blog/2017/04/20/upstreaming-snabbwall/&#34;&gt;here&lt;/a&gt;. Thanks
-to the NLNet Foundation for sponsoring this project!&lt;/p&gt;
-</description>
+      <guid>http://snabbwall.org/news/2017/04/20/sixth-milestone-upstreaming/</guid>
+      <description>We have completed the sixth and final development milestone of SnabbWall, which is to upstream the app to the main Snabb repository.
+With this update, we have moved the official Snabbwall branch to Igalia/snabb on Github in the snabbwall branch. Any further updates will be made to this branch and will be periodically upstreamed to the snabbco/snabb repository.
+There is a blog post with a few more details here. Thanks to the NLNet Foundation for sponsoring this project!</description>
     </item>
     
     <item>
       <title>Fifth milestone: documentation and benchmarking</title>
-      <link>http://snabbwall.org/news/2017/02/23/fifth-milestone-documentation-and-benchmarking</link>
+      <link>http://snabbwall.org/news/2017/02/23/fifth-milestone-documentation-and-benchmarking/</link>
       <pubDate>Thu, 23 Feb 2017 14:00:00 -0800</pubDate>
       
-      <guid>http://snabbwall.org/news/2017/02/23/fifth-milestone-documentation-and-benchmarking</guid>
-      <description>&lt;p&gt;We have completed the fifth and penultimate
-development milestone of &lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt;.
-This milestone consists of writing user documentation along with some
-testing and benchmarking.&lt;/p&gt;
-
-&lt;p&gt;On the documentation side, we now have a
-&lt;a href=&#34;http://snabbwall.org/guide/&#34;&gt;user guide&lt;/a&gt; document aimed at people who are
-familiar with Snabb and are interested in setting up a firewall with
-&lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt;. Please let us know if you have
-any feedback about the documentation.&lt;/p&gt;
-
-&lt;p&gt;For testing and benchmarking, you can check out the &lt;a href=&#34;https://github.com/aperezdc/snabb/tree/snabbwall/src/program/wall/tests&#34;&gt;tests directory&lt;/a&gt;
-in our Github repository. Based on the benchmarks, we have made several
-optimizations that should make &lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt;
-perform much better. For the full writeup on these optimizations,
-you can read the &lt;a href=&#34;https://www.asumu.xyz/blog/2017/02/21/optimizing-snabbwall/&#34;&gt;blog post&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The final remaining development milestone from our &lt;a href=&#34;http://snabbwall.org/roadmap/&#34;&gt;development
-roadmap&lt;/a&gt; is upstreaming.&lt;/p&gt;
-</description>
+      <guid>http://snabbwall.org/news/2017/02/23/fifth-milestone-documentation-and-benchmarking/</guid>
+      <description>We have completed the fifth and penultimate development milestone of SnabbWall. This milestone consists of writing user documentation along with some testing and benchmarking.
+On the documentation side, we now have a user guide document aimed at people who are familiar with Snabb and are interested in setting up a firewall with SnabbWall. Please let us know if you have any feedback about the documentation.
+For testing and benchmarking, you can check out the tests directory in our Github repository.</description>
     </item>
     
     <item>
       <title>Fourth milestone: We Have a Firewall!</title>
-      <link>http://snabbwall.org/news/2017/02/08/fourth-milestone-we-have-a-firewall</link>
+      <link>http://snabbwall.org/news/2017/02/08/fourth-milestone-we-have-a-firewall/</link>
       <pubDate>Wed, 08 Feb 2017 16:52:43 +0200</pubDate>
       
-      <guid>http://snabbwall.org/news/2017/02/08/fourth-milestone-we-have-a-firewall</guid>
-      <description>&lt;p&gt;Igalian &lt;a href=&#34;https://www.asumu.xyz/&#34;&gt;Asumu Takikawa&lt;/a&gt; has completed the next
-development milestone of &lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt;. This means
-that the &lt;code&gt;L7fw&lt;/code&gt; application is now
-&lt;a href=&#34;https://github.com/aperezdc/snabb/blob/snabbwall/src/apps/wall/l7fw.lua#L38&#34;&gt;available&lt;/a&gt;,
-as well as a &lt;code&gt;snabb wall filter&lt;/code&gt; command, which can be readily used. With
-these additions, the fourth development milestone of our &lt;a href=&#34;http://snabbwall.org/roadmap/&#34;&gt;development
-roadmap&lt;/a&gt; is now completed. Make sure to check out
-Asumu&amp;rsquo;s complete &lt;a href=&#34;https://www.asumu.xyz/blog/2017/01/27/snabbwall-s-firewall-app-l7fw/&#34;&gt;writeup about the new features&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;We have also started using the &lt;a href=&#34;https://github.com/aperezdc/snabb/wiki&#34;&gt;project
-wiki&lt;/a&gt; to write down some technical
-information for developers wanting to use the
-&lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt; components in their Snabb applications,
-or looking into contributing to the project.&lt;/p&gt;
-</description>
+      <guid>http://snabbwall.org/news/2017/02/08/fourth-milestone-we-have-a-firewall/</guid>
+      <description>Igalian Asumu Takikawa has completed the next development milestone of SnabbWall. This means that the L7fw application is now available, as well as a snabb wall filter command, which can be readily used. With these additions, the fourth development milestone of our development roadmap is now completed. Make sure to check out Asumu&amp;rsquo;s complete writeup about the new features.
+We have also started using the project wiki to write down some technical information for developers wanting to use the SnabbWallcomponents in their Snabb applications, or looking into contributing to the project.</description>
     </item>
     
     <item>
       <title>Third milestone: SnabbWall can now analyze traffic</title>
-      <link>http://snabbwall.org/news/2016/08/18/third-milestone-snabbwall-can-now-analyze-traffic</link>
+      <link>http://snabbwall.org/news/2016/08/18/third-milestone-snabbwall-can-now-analyze-traffic/</link>
       <pubDate>Thu, 18 Aug 2016 12:14:20 +0300</pubDate>
       
-      <guid>http://snabbwall.org/news/2016/08/18/third-milestone-snabbwall-can-now-analyze-traffic</guid>
-      <description>&lt;p&gt;After a small hiatus, work on &lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt; is
-progressing steadily again: the &lt;code&gt;L7Spy&lt;/code&gt; Snabb application and the &lt;code&gt;snabb wall
-spy&lt;/code&gt; command, which can be used to scan network traffic and detect L7 data
-flows, have landed in the repository. Our main developer has &lt;a href=&#34;https://perezdecastro.org/2016/snabbwalls-l7spy-analyzer.html&#34;&gt;written a
-lengthy post&lt;/a&gt; about these features, which completes the third
-milestone of the &lt;a href=&#34;http://snabbwall.org/roadmap/&#34;&gt;development roadmap&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&#34;https://github.com/aperezdc/ljndpi/&#34;&gt;ljndpi&lt;/a&gt; FFI binding has received updates as well. Starting with
-&lt;a href=&#34;https://github.com/aperezdc/ljndpi/releases/tag/v0.0.3&#34;&gt;version 0.0.3&lt;/a&gt;, it can be used with nDPI 1.8; and in order to ease
-adoption of &lt;code&gt;ljndpi&lt;/code&gt; by projects other than &lt;span
-class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt;, the module has been &lt;a href=&#34;https://luarocks.org/modules/aperezdc/ljndpi&#34;&gt;uploaded to the
-LuaRocks repository&lt;/a&gt;. For more details, you can read
-&lt;a href=&#34;https://perezdecastro.org/2016/ljndpi-0.0.3-released.html&#34;&gt;Adrián&amp;rsquo;s article on this topic&lt;/a&gt;.&lt;/p&gt;
-</description>
+      <guid>http://snabbwall.org/news/2016/08/18/third-milestone-snabbwall-can-now-analyze-traffic/</guid>
+      <description>After a small hiatus, work on SnabbWallis progressing steadily again: the L7Spy Snabb application and the snabb wall spy command, which can be used to scan network traffic and detect L7 data flows, have landed in the repository. Our main developer has written a lengthy post about these features, which completes the third milestone of the development roadmap.
+The ljndpi FFI binding has received updates as well. Starting with version 0.</description>
     </item>
     
     <item>
       <title>Development reaches second milestone</title>
-      <link>http://snabbwall.org/news/2016/01/25/development-reaches-second-milestone</link>
+      <link>http://snabbwall.org/news/2016/01/25/development-reaches-second-milestone/</link>
       <pubDate>Mon, 25 Jan 2016 15:40:29 +0200</pubDate>
       
-      <guid>http://snabbwall.org/news/2016/01/25/development-reaches-second-milestone</guid>
-      <description>&lt;p&gt;The &lt;a href=&#34;https://github.com/aperezdc/ljndpi/releases/tag/v0.0.1&#34;&gt;first release&lt;/a&gt; of &lt;a href=&#34;https://github.com/aperezdc/ljndpi&#34;&gt;ljndpi&lt;/a&gt;, our binding for the &lt;a href=&#34;http://www.ntop.org/products/deep-packet-inspection/ndpi/&#34;&gt;nDPI&lt;/a&gt; deep packet inspection library, marks the completion of the second milestone of the &lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt; development &lt;a href=&#34;http://snabbwall.org/roadmap/&#34;&gt;roadmap&lt;/a&gt;. Our lead developer has written &lt;a href=&#34;http://perezdecastro.org/2016/ljndi-snabbwall-sidekick.html&#34;&gt;an article&lt;/a&gt; explaning how it was implemented.&lt;/p&gt;
-</description>
+      <guid>http://snabbwall.org/news/2016/01/25/development-reaches-second-milestone/</guid>
+      <description>The first release of ljndpi, our binding for the nDPI deep packet inspection library, marks the completion of the second milestone of the SnabbWalldevelopment roadmap. Our lead developer has written an article explaning how it was implemented.</description>
     </item>
     
     <item>
       <title>Introducing SnabbWall</title>
-      <link>http://snabbwall.org/news/2015/12/31/introducing-snabbwall</link>
+      <link>http://snabbwall.org/news/2015/12/31/introducing-snabbwall/</link>
       <pubDate>Thu, 31 Dec 2015 12:39:13 +0200</pubDate>
       
-      <guid>http://snabbwall.org/news/2015/12/31/introducing-snabbwall</guid>
-      <description>&lt;p&gt;The project is officially started!  &lt;a href=&#34;http://perezdecastro.org&#34;&gt;Adrián Pérez&lt;/a&gt; has &lt;a href=&#34;http://perezdecastro.org/2015/introducing-snabbwall.html&#34;&gt;posted a writeup&lt;/a&gt; introducing the project and commenting on some of aspects of the &lt;a href=&#34;http://snabbwall.org/design/&#34;&gt;design&lt;/a&gt; of &lt;span class=&#34;appname&#34;&gt;SnabbWall&lt;/span&gt;.&lt;/p&gt;
-</description>
+      <guid>http://snabbwall.org/news/2015/12/31/introducing-snabbwall/</guid>
+      <description>&lt;p&gt;The project is officially started!&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -3,7 +3,7 @@
 <head>
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="generator" content="Hugo 0.15" />
+  <meta name="generator" content="Hugo 0.78.2" />
 
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -57,8 +57,7 @@
 		<div class="content container">
 			<div class="post">
 			 	<h1>Roadmap</h1>
-			      <p>The <a href="http://snabbwall.org/development/">development</a> of <span class="appname">SnabbWall</span> has been divided into the following milestones:</p>
-
+			      <p>The <a href="http://snabbwall.org/development/">development</a> of <!-- raw HTML omitted -->SnabbWall<!-- raw HTML omitted --> has been divided into the following milestones:</p>
 <table>
 <thead>
 <tr>
@@ -67,44 +66,37 @@
 <th>Description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><strong>Design</strong></td>
 <td><a href="http://snabbwall.org/design/">completed</a></td>
 <td>Decide the overall architecture of the system, which will use the <a href="http://www.ntop.org/products/deep-packet-inspection/ndpi/">nDPI</a> packet inspection library. In particular, how access to the library is orchestrated will determine how other parts of the system have to be implemented, and care must be taken to avoid overhead when invoking its functions.</td>
 </tr>
-
 <tr>
 <td><strong>Library Bindings</strong></td>
 <td><a href="http://perezdecastro.org/2016/ljndi-snabbwall-sidekick.html">completed</a></td>
 <td>Implement the Lua binding for nDPI, and any additional support code which may be needed by it.</td>
 </tr>
-
 <tr>
 <td><strong>L7 Flow Detector</strong></td>
 <td><a href="https://perezdecastro.org/2016/snabbwalls-l7spy-analyzer.html">completed</a></td>
 <td>Implement a reusable component for Snabb which detects application-level (L7) traffic flows, plus test programs and documentation.</td>
 </tr>
-
 <tr>
 <td><strong>L7 Firewall Application</strong></td>
 <td><a href="https://www.asumu.xyz/blog/2017/01/27/snabbwall-s-firewall-app-l7fw/">completed</a></td>
 <td>Implement a Snabb Switch application/program which can accept, drop or reject traffic based on the application-level data flows, using the component developed in the previous phase.</td>
 </tr>
-
 <tr>
 <td><strong>Documentation</strong></td>
 <td><a href="https://www.asumu.xyz/blog/2017/02/21/optimizing-snabbwall/">completed</a></td>
 <td>Complete the documentation to cover the public API of the flow detector component, a guide for Snabb developers, and an user-oriented manual for the firewall application.</td>
 </tr>
-
 <tr>
 <td><strong>Testing and Benchmarking</strong></td>
 <td><a href="https://www.asumu.xyz/blog/2017/02/21/optimizing-snabbwall/">completed</a></td>
 <td>Provide a benchmark and test suite, plus performance reports.</td>
 </tr>
-
 <tr>
 <td><strong>Upstreaming</strong></td>
 <td><a href="https://www.asumu.xyz/blog/2017/04/20/upstreaming-snabbwall/">completed</a></td>
@@ -112,7 +104,6 @@
 </tr>
 </tbody>
 </table>
-
 <p>Note that, while the milestones above are detailed in a linear way, some tasks from different phases can —an may— be carried in parallel. For example, the documentation and upstreaming efforts are very likely to be done in parallel with the development.</p>
 
 			</div>
