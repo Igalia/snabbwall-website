@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SnabbWall</title>
-    <link>http://snabbwall.igalia.com/</link>
+    <link>https://snabbwall.igalia.com/</link>
     <description>Recent content on SnabbWall</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Apr 2017 16:00:00 -0800</lastBuildDate><atom:link href="http://snabbwall.igalia.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 Apr 2017 16:00:00 -0800</lastBuildDate><atom:link href="https://snabbwall.igalia.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Sixth milestone: upstreaming</title>
-      <link>http://snabbwall.igalia.com/news/2017/04/20/sixth-milestone-upstreaming/</link>
+      <link>https://snabbwall.igalia.com/news/2017/04/20/sixth-milestone-upstreaming/</link>
       <pubDate>Thu, 20 Apr 2017 16:00:00 -0800</pubDate>
       
-      <guid>http://snabbwall.igalia.com/news/2017/04/20/sixth-milestone-upstreaming/</guid>
+      <guid>https://snabbwall.igalia.com/news/2017/04/20/sixth-milestone-upstreaming/</guid>
       <description>We have completed the sixth and final development milestone of SnabbWall, which is to upstream the app to the main Snabb repository.
 With this update, we have moved the official Snabbwall branch to Igalia/snabb on Github in the snabbwall branch. Any further updates will be made to this branch and will be periodically upstreamed to the snabbco/snabb repository.
 There is a blog post with a few more details here. Thanks to the NLNet Foundation for sponsoring this project!</description>
@@ -20,10 +20,10 @@ There is a blog post with a few more details here. Thanks to the NLNet Foundatio
     
     <item>
       <title>Fifth milestone: documentation and benchmarking</title>
-      <link>http://snabbwall.igalia.com/news/2017/02/23/fifth-milestone-documentation-and-benchmarking/</link>
+      <link>https://snabbwall.igalia.com/news/2017/02/23/fifth-milestone-documentation-and-benchmarking/</link>
       <pubDate>Thu, 23 Feb 2017 14:00:00 -0800</pubDate>
       
-      <guid>http://snabbwall.igalia.com/news/2017/02/23/fifth-milestone-documentation-and-benchmarking/</guid>
+      <guid>https://snabbwall.igalia.com/news/2017/02/23/fifth-milestone-documentation-and-benchmarking/</guid>
       <description>We have completed the fifth and penultimate development milestone of SnabbWall. This milestone consists of writing user documentation along with some testing and benchmarking.
 On the documentation side, we now have a user guide document aimed at people who are familiar with Snabb and are interested in setting up a firewall with SnabbWall. Please let us know if you have any feedback about the documentation.
 For testing and benchmarking, you can check out the tests directory in our Github repository.</description>
@@ -31,58 +31,58 @@ For testing and benchmarking, you can check out the tests directory in our Githu
     
     <item>
       <title>Fourth milestone: We Have a Firewall!</title>
-      <link>http://snabbwall.igalia.com/news/2017/02/08/fourth-milestone-we-have-a-firewall/</link>
+      <link>https://snabbwall.igalia.com/news/2017/02/08/fourth-milestone-we-have-a-firewall/</link>
       <pubDate>Wed, 08 Feb 2017 16:52:43 +0200</pubDate>
       
-      <guid>http://snabbwall.igalia.com/news/2017/02/08/fourth-milestone-we-have-a-firewall/</guid>
+      <guid>https://snabbwall.igalia.com/news/2017/02/08/fourth-milestone-we-have-a-firewall/</guid>
       <description>Igalian Asumu Takikawa has completed the next development milestone of SnabbWall. This means that the L7fw application is now available, as well as a snabb wall filter command, which can be readily used. With these additions, the fourth development milestone of our development roadmap is now completed. Make sure to check out Asumu&amp;rsquo;s complete writeup about the new features.
 We have also started using the project wiki to write down some technical information for developers wanting to use the SnabbWallcomponents in their Snabb applications, or looking into contributing to the project.</description>
     </item>
     
     <item>
       <title>Guide</title>
-      <link>http://snabbwall.igalia.com/guide/</link>
+      <link>https://snabbwall.igalia.com/guide/</link>
       <pubDate>Fri, 03 Feb 2017 19:40:00 -0800</pubDate>
       
-      <guid>http://snabbwall.igalia.com/guide/</guid>
+      <guid>https://snabbwall.igalia.com/guide/</guid>
       <description>This document is a high-level guide that describes how to use SnabbWallto set up a basic firewall. See the design page for background on the basic philosophy and design of SnabbWall.
 Use-case This guide will use a concrete use-case to illustrate how one might set up a SnabbWalldeployment. Imagine that you are running a public network, maybe a cafe hotspot or a corporate guest network, and wish to block Bittorrent traffic to save on bandwidth.</description>
     </item>
     
     <item>
       <title>Third milestone: SnabbWall can now analyze traffic</title>
-      <link>http://snabbwall.igalia.com/news/2016/08/18/third-milestone-snabbwall-can-now-analyze-traffic/</link>
+      <link>https://snabbwall.igalia.com/news/2016/08/18/third-milestone-snabbwall-can-now-analyze-traffic/</link>
       <pubDate>Thu, 18 Aug 2016 12:14:20 +0300</pubDate>
       
-      <guid>http://snabbwall.igalia.com/news/2016/08/18/third-milestone-snabbwall-can-now-analyze-traffic/</guid>
+      <guid>https://snabbwall.igalia.com/news/2016/08/18/third-milestone-snabbwall-can-now-analyze-traffic/</guid>
       <description>After a small hiatus, work on SnabbWallis progressing steadily again: the L7Spy Snabb application and the snabb wall spy command, which can be used to scan network traffic and detect L7 data flows, have landed in the repository. Our main developer has written a lengthy post about these features, which completes the third milestone of the development roadmap.
 The ljndpi FFI binding has received updates as well. Starting with version 0.</description>
     </item>
     
     <item>
       <title>Development reaches second milestone</title>
-      <link>http://snabbwall.igalia.com/news/2016/01/25/development-reaches-second-milestone/</link>
+      <link>https://snabbwall.igalia.com/news/2016/01/25/development-reaches-second-milestone/</link>
       <pubDate>Mon, 25 Jan 2016 15:40:29 +0200</pubDate>
       
-      <guid>http://snabbwall.igalia.com/news/2016/01/25/development-reaches-second-milestone/</guid>
+      <guid>https://snabbwall.igalia.com/news/2016/01/25/development-reaches-second-milestone/</guid>
       <description>The first release of ljndpi, our binding for the nDPI deep packet inspection library, marks the completion of the second milestone of the SnabbWalldevelopment roadmap. Our lead developer has written an article explaning how it was implemented.</description>
     </item>
     
     <item>
       <title>Introducing SnabbWall</title>
-      <link>http://snabbwall.igalia.com/news/2015/12/31/introducing-snabbwall/</link>
+      <link>https://snabbwall.igalia.com/news/2015/12/31/introducing-snabbwall/</link>
       <pubDate>Thu, 31 Dec 2015 12:39:13 +0200</pubDate>
       
-      <guid>http://snabbwall.igalia.com/news/2015/12/31/introducing-snabbwall/</guid>
+      <guid>https://snabbwall.igalia.com/news/2015/12/31/introducing-snabbwall/</guid>
       <description>&lt;p&gt;The project is officially started!&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Design</title>
-      <link>http://snabbwall.igalia.com/design/</link>
+      <link>https://snabbwall.igalia.com/design/</link>
       <pubDate>Tue, 22 Dec 2015 23:26:17 +0200</pubDate>
       
-      <guid>http://snabbwall.igalia.com/design/</guid>
+      <guid>https://snabbwall.igalia.com/design/</guid>
       <description>Overview SnabbWallis a modular, application-level (Layer-7) firewall suite for Snabb.
 As a modular system, it provides a set of components which can be reused in other Snabb designs.
 As an application-level (Layer-7) firewall, it is able to:
@@ -91,20 +91,20 @@ As an application-level (Layer-7) firewall, it is able to:
     
     <item>
       <title>Roadmap</title>
-      <link>http://snabbwall.igalia.com/roadmap/</link>
+      <link>https://snabbwall.igalia.com/roadmap/</link>
       <pubDate>Wed, 02 Dec 2015 15:10:01 +0200</pubDate>
       
-      <guid>http://snabbwall.igalia.com/roadmap/</guid>
+      <guid>https://snabbwall.igalia.com/roadmap/</guid>
       <description>The development of SnabbWallhas been divided into the following milestones:
    Milestone Status Description     Design completed Decide the overall architecture of the system, which will use the nDPI packet inspection library. In particular, how access to the library is orchestrated will determine how other parts of the system have to be implemented, and care must be taken to avoid overhead when invoking its functions.   Library Bindings completed Implement the Lua binding for nDPI, and any additional support code which may be needed by it.</description>
     </item>
     
     <item>
       <title>Development</title>
-      <link>http://snabbwall.igalia.com/development/</link>
+      <link>https://snabbwall.igalia.com/development/</link>
       <pubDate>Tue, 01 Dec 2015 23:27:38 +0200</pubDate>
       
-      <guid>http://snabbwall.igalia.com/development/</guid>
+      <guid>https://snabbwall.igalia.com/development/</guid>
       <description>Development of SnabbWalltakes place in Igalia&amp;rsquo;s development branch of Snabb with snabbwall being the main development branch. Currently SnabbWall is based on the Snabb 2017.04 &amp;ldquo;Dragon&amp;rdquo; stable release.
 The project roadmap provides a good overview of the current development status.
 Getting Started Setting up Snabb Switch for development takes just a few minutes:
