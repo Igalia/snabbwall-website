@@ -1,4 +1,4 @@
-baseurl = "http://snabbwall.igalia.com/"
+baseurl = "https://snabbwall.igalia.com/"
 languageCode = "en-us"
 title = "SnabbWall"
 PygmentsCodeFences = true
